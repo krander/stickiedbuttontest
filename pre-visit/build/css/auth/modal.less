@@ -1,0 +1,224 @@
+.fixed-overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  overflow: auto;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  text-align: center;
+  -webkit-animation: fade-opacity-appear 0.2s ease-in;
+  animation: fade-opacity-appear 0.2s ease-in;
+  &:before {
+    content: '';
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: block;
+    background: @cyan;
+    opacity: 0.7;
+    width: 100%;
+    height: 100%;
+  }
+  .modal {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    width: 80%;
+    &.full-width-modal {
+      width: 95%
+    }
+    &.sm {
+      max-width: 660px;
+      .modal-window__title {
+        display: flex;
+        justify-content: space-between;
+        font-size: 36px;
+        font-weight: normal;
+        padding-bottom: 25px;
+        margin-bottom: 25px;
+        border-bottom: 2px solid #e8ebec;
+        text-align: left;
+        &--inner {
+          padding-right: 15px;
+          @media @mobile {
+            padding-right: 0;
+            font-size: 28px;
+            text-align: center;
+          }
+        }
+        @media @mobile {
+          flex-direction: column;
+          padding-bottom: 15px;
+          margin-bottom: 15px;
+          .icon-calendar {
+            align-self: center;
+          }
+        }
+      }
+      .button {
+        width: 100%;
+      }
+      .modal-window {
+        &__text {
+          color: #95a2a7;
+          font-size: 18px;
+          line-height: 1.2;
+        }
+      }
+    }
+  }
+  .full-width-modal {
+    .modal-window {
+      padding: 30px 40px;
+    }
+    .form-row {
+      padding-top: 15px;
+      margin-bottom: 27px;
+    }
+  }
+  .kiosk-input-inner {
+    max-width: 100%;
+  }
+  .modal-window {
+    text-align: left;
+    background: @white;
+    z-index: 999;
+    border-radius: 10px;
+    padding: 35px;
+    @media @mobile {
+      padding: 20px;
+    }
+    &__title {
+      font-size: 33px;
+      font-weight: bold;
+      padding-bottom: 50px;
+      text-align: center;
+      &.text-left {
+        text-align: left;
+      }
+    }
+    &__subtitle {
+      font-size: 17px;
+      font-style: italic;
+      opacity: 0.8;
+    }
+    &__review-image {
+      width: 100%;
+      height: auto;
+      margin: 20px 0;
+      img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+    }
+    &__text {
+      font-size: 28px;
+      padding-bottom: 25px;
+      @media @mobile {
+        padding-bottom: 15px;
+      }
+    }
+    &__buttons {
+      text-align: center;
+      &.flex {
+        display: flex;
+        justify-content: space-between;
+        .button {
+          flex: 1 1 auto;
+          margin: 0;
+          text-transform: none;
+          font-size: 18px;
+          box-shadow: none;
+        }
+        .kiosk-lock-button-ok {
+          margin-right: 15px;
+        }
+      }
+    }
+    .kiosk-lock-button-cancel, .kiosk-lock-button-ok {
+      font-size: 20px;
+      min-width: 150px;
+    }
+    .kiosk-lock-button-ok {
+      background-color: @darkblue;
+    }
+    .kiosk-lock-button-cancel {
+      background-color: @orange;
+    }
+    &-agreement-instruction {
+      display: flex;
+      align-items: center;
+      &__title {
+        color: @grey_5;
+        font-style: italic;
+        font-size: 19px;
+      }
+    }
+    .icon-keyboard-dark {
+      flex: 0 0 63px;
+      margin-right: 15px;
+    }
+     &-agreement-control {
+      display: flex;
+      justify-content: space-between;
+      color: @white;
+      font-size: 20px;
+      margin-top: 27px;
+      .icon-finger-stroke {
+        margin-right: 7px;
+        flex: 0 0 30px;
+      }
+      &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 13px 30px;
+        flex: 0 0 auto;
+        min-width: 170px;
+        border-radius: 8px;
+      }
+    }
+  }
+}
+
+.icon-calendar {
+  flex: 0 0 74px;
+  &, use {
+    width: 74px;
+    height: 74px;
+  }
+  @media @mobile {
+    flex: 0 0 50px;
+    margin-top: 15px;
+    &, use {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}
+
+@-webkit-keyframes fade-opacity-appear {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+@keyframes fade-opacity-appear {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
