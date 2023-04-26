@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" type="image/icon" href="/version/Phreesia.Web.Auth.Service/Content/Images/favicon.ico" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Welcome</title>
+
+        <link href="css/auth/bootstrapper.css" rel="stylesheet"/>
+        <link href="../style.css" rel="stylesheet"/>
+        <style>
+          .custom-header-font-color-date {
+            font-weight: bold;
+            color: #fff !important;
+            font-size: 18px;
+            margin: 15px 0;
+            display: block;
+          }
+          .customer-wrapper {
+            display: flex;
+            justify-content: space-between;
+            max-width: 300px;
+            margin: 0 auto;
+            font-size: 18px;
+            align-items: center;
+          }
+          .customer-time {
+            font-size: 30px;
+            font-weight: normal;
+          }
+          .customer-time sup {
+            font-size: 18px;
+          }
+          .language-selection-welcome .preferred-languages__item {
+              width: 33.3%;
+              padding: 7px 4px;
+          }
+          .preferred-languages__item[data-id="es-US"] svg, .language-selection-item[data-id="es-US"] svg, .toggle-locale__label[data-id="es-US"] svg, .preferred-languages__item[data-id="es-US"].toggle-locale__label, .language-selection-item[data-id="es-US"].toggle-locale__label, .toggle-locale__label[data-id="es-US"].toggle-locale__label {
+              width: 57px;
+              height: 17px;
+          }
+          .custom-header-font-color svg, .custom-header-bg-color svg, .custom-header-bg-color svg {
+              fill: #fff!important;
+          }
+          .preferred-languages__item[data-id="ru-RU"] svg, .language-selection-item[data-id="ru-RU"] svg, .toggle-locale__label[data-id="ru-RU"] svg, .preferred-languages__item[data-id="fr-FR"] svg, .language-selection-item[data-id="fr-FR"] svg, .toggle-locale__label[data-id="fr-FR"] svg, .preferred-languages__item[data-id="ru-RU"].toggle-locale__label, .language-selection-item[data-id="ru-RU"].toggle-locale__label, .toggle-locale__label[data-id="ru-RU"].toggle-locale__label, .preferred-languages__item[data-id="fr-FR"].toggle-locale__label, .language-selection-item[data-id="fr-FR"].toggle-locale__label, .toggle-locale__label[data-id="fr-FR"].toggle-locale__label {
+              width: 60px;
+              height: 17px;
+          }
+          .preferred-languages__item[data-id="de-DE"] svg, .language-selection-item[data-id="de-DE"] svg, .toggle-locale__label[data-id="de-DE"] svg, .preferred-languages__item[data-id="vi-VN"] svg, .language-selection-item[data-id="vi-VN"] svg, .toggle-locale__label[data-id="vi-VN"] svg, .preferred-languages__item[data-id="de-DE"].toggle-locale__label, .language-selection-item[data-id="de-DE"].toggle-locale__label, .toggle-locale__label[data-id="de-DE"].toggle-locale__label, .preferred-languages__item[data-id="vi-VN"].toggle-locale__label, .language-selection-item[data-id="vi-VN"].toggle-locale__label, .toggle-locale__label[data-id="vi-VN"].toggle-locale__label {
+              width: 70px;
+              height: 17px;
+          }
+          .preferred-languages__item[data-id="pt-BR"] svg, .language-selection-item[data-id="pt-BR"] svg, .toggle-locale__label[data-id="pt-BR"] svg, .preferred-languages__item[data-id="pt-BR"].toggle-locale__label, .language-selection-item[data-id="pt-BR"].toggle-locale__label, .toggle-locale__label[data-id="pt-BR"].toggle-locale__label {
+              width: 76px;
+              height: 17px;
+          }
+          .preferred-languages__item[data-id="zh-CN"] svg, .language-selection-item[data-id="zh-CN"] svg, .toggle-locale__label[data-id="zh-CN"] svg, .preferred-languages__item[data-id="zh-TW"] svg, .language-selection-item[data-id="zh-TW"] svg, .toggle-locale__label[data-id="zh-TW"] svg, .preferred-languages__item[data-id="zh-CN"].toggle-locale__label, .language-selection-item[data-id="zh-CN"].toggle-locale__label, .toggle-locale__label[data-id="zh-CN"].toggle-locale__label, .preferred-languages__item[data-id="zh-TW"].toggle-locale__label, .language-selection-item[data-id="zh-TW"].toggle-locale__label, .toggle-locale__label[data-id="zh-TW"].toggle-locale__label {
+              width: 68px;
+              height: 17px;
+          }
+          .preferred-languages__item[data-id="ja-JP"] svg, .language-selection-item[data-id="ja-JP"] svg, .toggle-locale__label[data-id="ja-JP"] svg, .preferred-languages__item[data-id="ja-JP"].toggle-locale__label, .language-selection-item[data-id="ja-JP"].toggle-locale__label, .toggle-locale__label[data-id="ja-JP"].toggle-locale__label {
+              width: 48px;
+              height: 17px;
+          }
+          .preferred-languages__item[data-id="en-US"] svg, .language-selection-item[data-id="en-US"] svg, .toggle-locale__label[data-id="en-US"] svg, .preferred-languages__item[data-id="fil-PH"] svg, .language-selection-item[data-id="fil-PH"] svg, .toggle-locale__label[data-id="fil-PH"] svg, .preferred-languages__item[data-id="en-US"].toggle-locale__label, .language-selection-item[data-id="en-US"].toggle-locale__label, .toggle-locale__label[data-id="en-US"].toggle-locale__label, .preferred-languages__item[data-id="fil-PH"].toggle-locale__label, .language-selection-item[data-id="fil-PH"].toggle-locale__label, .toggle-locale__label[data-id="fil-PH"].toggle-locale__label {
+              width: 52px;
+              height: 17px;
+          }
+          .preferred-languages__item[data-id="ko-KR"] svg, .language-selection-item[data-id="ko-KR"] svg, .toggle-locale__label[data-id="ko-KR"] svg, .preferred-languages__item[data-id="ko-KR"].toggle-locale__label, .language-selection-item[data-id="ko-KR"].toggle-locale__label, .toggle-locale__label[data-id="ko-KR"].toggle-locale__label {
+              width: 44px;
+              height: 17px;
+          }
+          .preferred-languages__item[data-id="it-IT"] svg, .language-selection-item[data-id="it-IT"] svg, .toggle-locale__label[data-id="it-IT"] svg, .preferred-languages__item[data-id="it-IT"].toggle-locale__label, .language-selection-item[data-id="it-IT"].toggle-locale__label, .toggle-locale__label[data-id="it-IT"].toggle-locale__label {
+              width: 56px;
+              height: 14px;
+          }
+          .preferred-languages__item[data-id="ht-HT"] svg, .language-selection-item[data-id="ht-HT"] svg, .toggle-locale__label[data-id="ht-HT"] svg, .preferred-languages__item[data-id="ht-HT"].toggle-locale__label, .language-selection-item[data-id="ht-HT"].toggle-locale__label, .toggle-locale__label[data-id="ht-HT"].toggle-locale__label {
+              width: 98px;
+              height: 17px;
+          }
+          .preferred-languages__item[data-id="hi-IN"] svg, .language-selection-item[data-id="hi-IN"] svg, .toggle-locale__label[data-id="hi-IN"] svg, .preferred-languages__item[data-id="hi-IN"].toggle-locale__label, .language-selection-item[data-id="hi-IN"].toggle-locale__label, .toggle-locale__label[data-id="hi-IN"].toggle-locale__label {
+              width: 27px;
+              height: 17px;
+          }
+          .preferred-languages__item[data-id="pl-PL"] svg, .language-selection-item[data-id="pl-PL"] svg, .toggle-locale__label[data-id="pl-PL"] svg, .preferred-languages__item[data-id="pl-PL"].toggle-locale__label, .language-selection-item[data-id="pl-PL"].toggle-locale__label, .toggle-locale__label[data-id="pl-PL"].toggle-locale__label {
+              width: 52px;
+              height: 14px;
+          }
+          .preferred-languages__item[data-id="ar-SY"] svg, .language-selection-item[data-id="ar-SY"] svg, .toggle-locale__label[data-id="ar-SY"] svg, .preferred-languages__item[data-id="ar-SY"].toggle-locale__label, .language-selection-item[data-id="ar-SY"].toggle-locale__label, .toggle-locale__label[data-id="ar-SY"].toggle-locale__label {
+              width: 36px;
+              height: 14px;
+          }
+          .preferred-languages__item[data-id="ur-PK"] svg, .language-selection-item[data-id="ur-PK"] svg, .toggle-locale__label[data-id="ur-PK"] svg, .preferred-languages__item[data-id="ur-PK"].toggle-locale__label, .language-selection-item[data-id="ur-PK"].toggle-locale__label, .toggle-locale__label[data-id="ur-PK"].toggle-locale__label {
+              width: 24px;
+              height: 17px;
+          }
+          .preferred-languages__item[data-id="ku-Arab-IQ"] svg, .language-selection-item[data-id="ku-Arab-IQ"] svg, .toggle-locale__label[data-id="ku-Arab-IQ"] svg, .preferred-languages__item[data-id="ku-Arab-IQ"].toggle-locale__label, .language-selection-item[data-id="ku-Arab-IQ"].toggle-locale__label, .toggle-locale__label[data-id="ku-Arab-IQ"].toggle-locale__label {
+              width: 42px;
+              height: 17px;
+          }
+          .preferred-languages__item[data-id="fa-IR"] svg, .language-selection-item[data-id="fa-IR"] svg, .toggle-locale__label[data-id="fa-IR"] svg, .preferred-languages__item[data-id="fa-IR"].toggle-locale__label, .language-selection-item[data-id="fa-IR"].toggle-locale__label, .toggle-locale__label[data-id="fa-IR"].toggle-locale__label {
+              width: 44px;
+              height: 17px;
+          }
+          .preferred-languages__item[data-id="uk-UA"] svg, .language-selection-item[data-id="uk-UA"] svg, .toggle-locale__label[data-id="uk-UA"] svg, .preferred-languages__item[data-id="uk-UA"].toggle-locale__label, .language-selection-item[data-id="uk-UA"].toggle-locale__label, .toggle-locale__label[data-id="uk-UA"].toggle-locale__label {
+              width: 86px;
+              height: 17px;
+          }
+        </style>
+    </head>
+
+<div class="main-container flex custom-body-bg-color">
+
+
+
+
+  <div class="welcome-page background-lightgrey custom-body-bg-color" data-id="welcome-page">
+    <div class="welcome-page-inner">
+      <div class="welcome-page__header-wrapper custom-header-bg-color">
+        <section class="screen-section welcome-page__header" data-id="welcome-page-header">
+          <svg class="welcome-page__header--avatar" data-id="welcome-page-avatar" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44">
+            <path d="M22,0A22,22,0,1,0,44,22,22,22,0,0,0,22,0ZM8.82,38.33a13.52,13.52,0,0,1,4.91-10.44,13.27,13.27,0,0,1,2.79-1.76A8.95,8.95,0,0,0,27.62,26a13.46,13.46,0,0,1,7.88,12,20.92,20.92,0,0,1-26.68.27ZM14,19a8.11,8.11,0,1,1,2.69,6A8,8,0,0,1,14,19ZM36.46,37.19a14.4,14.4,0,0,0-8-11.9,9,9,0,1,0-12.72.13,14.24,14.24,0,0,0-2.61,1.7A14.49,14.49,0,0,0,7.87,37.49a21,21,0,1,1,28.59-.3Z"
+            />
+          </svg>
+          <span class="welcome-page__header--title custom-header-font-color" data-id="welcome-page-header-title">Welcome, Elliot</span>
+          <div class="practice-information custom-header-font-color" data-id="practice-information">
+            <span class="practice-information__name" data-id="practice-information-name">
+              Park Ave Clinic
+            </span>
+            <div class="practice-information__info practice-information__location" data-id="practice-information-location">
+                <div class="practice-information__location--address">432 Park Ave South, New York, NY, 10016</div>
+            </div>
+            <span class="custom-header-font-color-date" data-id="visit-info">
+              Thursday, June 21st, 2021
+            </span>
+
+          
+            <div class="customer-wrapper">
+              <div class="customer-time">11:30<sup>am</sup></div>
+              <div>Dr. William Smith</div>
+            </div>
+
+          </div>
+
+          <button class="toggle-locale-button" id="toggle-preferred-languages" data-id="button-locale-toggle">
+            <svg class="toggle-locale-button__icon" data-id="locale-icon">
+              <use xlink:href="#toggle-locale-icon"></use>
+            </svg>
+            <span class="toggle-locale__label" data-id="practice-information-button-label">English</span>
+          </button>
+          <div class="language-selection-welcome" id="language-selection" style="display: none;" data-id="language-selection">
+            <span class="language-selection-welcome__title custom-header-font-color">Please select preferred language</span>
+            <ul class="preferred-languages" data-id="preferred-languages">
+            <!-- all except current languages shown on welcome screen -->
+                <li class="preferred-languages__item custom-header-font-color" data-id="es-US">
+                    <span class="preferred-languages__item--title custom-header-font-color">
+                      <svg class="language-selection-item__name svg-es-US-2" viewBox="0 0 54 16">
+                          
+                      <path d="M6.4,12h-6V1.3h6v1.2H1.8v3.3h4.4V7H1.8v3.8h4.6V12z M13.9,9.8c0,0.8-0.3,1.4-0.9,1.8
+            c-0.6,0.4-1.4,0.6-2.3,0.6c-0.6,0-1,0-1.4-0.1c-0.4-0.1-0.8-0.2-1.1-0.4v-1.2c0.3,0.2,0.7,0.3,1.2,0.4c0.5,0.1,0.9,0.2,1.4,0.2
+            c0.7,0,1.2-0.1,1.5-0.3s0.4-0.5,0.4-0.9c0-0.2-0.1-0.4-0.2-0.5S12.1,9,11.8,8.9s-0.7-0.3-1.2-0.5c-0.5-0.2-1-0.4-1.3-0.6
+            C8.9,7.5,8.6,7.3,8.4,7C8.2,6.7,8.1,6.4,8.1,5.9c0-0.7,0.3-1.2,0.8-1.6c0.6-0.4,1.3-0.6,2.2-0.6c0.5,0,0.9,0,1.4,0.2
+            c0.4,0.1,0.8,0.2,1.2,0.4l-0.5,1.1c-0.3-0.1-0.7-0.3-1.1-0.4S11.4,4.9,11,4.9c-0.5,0-1,0.1-1.2,0.3C9.5,5.3,9.4,5.6,9.4,5.9
+            c0,0.2,0.1,0.4,0.2,0.6c0.1,0.2,0.3,0.3,0.7,0.5c0.3,0.2,0.7,0.3,1.2,0.5c0.5,0.2,0.9,0.4,1.3,0.6s0.6,0.4,0.8,0.7
+            C13.8,9,13.9,9.3,13.9,9.8z M19.6,3.8c1,0,1.8,0.3,2.4,1s0.9,1.7,0.9,3.1c0,1.4-0.3,2.4-0.9,3.1s-1.4,1.1-2.4,1.1
+            c-0.6,0-1.1-0.1-1.5-0.3c-0.4-0.2-0.7-0.5-1-0.8H17c0,0.2,0,0.4,0.1,0.6s0,0.5,0,0.7v3.3h-1.3V4h1.1l0.2,1.1h0.1
+            c0.2-0.4,0.6-0.6,0.9-0.9C18.5,3.9,19,3.8,19.6,3.8z M19.4,4.9c-0.8,0-1.4,0.2-1.7,0.7c-0.3,0.5-0.5,1.2-0.5,2.1V8
+            c0,1,0.2,1.8,0.5,2.3s0.9,0.8,1.8,0.8c0.5,0,0.9-0.1,1.2-0.4s0.6-0.6,0.7-1.1c0.2-0.5,0.2-1,0.2-1.6c0-0.9-0.2-1.7-0.5-2.2
+            S20.1,4.9,19.4,4.9z M28.1,3.8c1,0,1.7,0.2,2.2,0.6C30.7,4.9,31,5.6,31,6.5V12h-1l-0.3-1.1h-0.1c-0.4,0.4-0.7,0.8-1.1,1
+            c-0.4,0.2-0.9,0.3-1.6,0.3c-0.7,0-1.3-0.2-1.8-0.6c-0.5-0.4-0.7-1-0.7-1.8c0-0.8,0.3-1.4,0.9-1.9s1.6-0.7,2.9-0.7l1.4,0V6.7
+            c0-0.7-0.1-1.1-0.4-1.4C28.9,5,28.5,4.9,28,4.9c-0.4,0-0.8,0.1-1.2,0.2c-0.4,0.1-0.7,0.3-1.1,0.4l-0.4-1c0.4-0.2,0.8-0.4,1.2-0.5
+            C27.1,3.9,27.5,3.8,28.1,3.8z M29.6,8.1l-1.2,0c-1,0-1.7,0.2-2.1,0.5c-0.4,0.3-0.6,0.7-0.6,1.2c0,0.5,0.1,0.8,0.4,1
+            c0.3,0.2,0.6,0.3,1.1,0.3c0.7,0,1.2-0.2,1.7-0.6s0.7-1,0.7-1.7V8.1z M37.3,3.8c1,0,1.7,0.2,2.2,0.7C40,5,40.2,5.7,40.2,6.8V12h-1.3
+            V6.9c0-1.3-0.6-1.9-1.8-1.9c-0.9,0-1.5,0.2-1.8,0.8c-0.3,0.5-0.5,1.2-0.5,2.2V12h-1.3V4h1.1l0.2,1.1h0.1c0.3-0.4,0.6-0.7,1.1-0.9
+            C36.3,3.9,36.8,3.8,37.3,3.8z M34,2.9c0.1-0.6,0.2-1.1,0.5-1.4C34.8,1.2,35.2,1,35.7,1c0.3,0,0.6,0.1,0.8,0.2
+            c0.3,0.1,0.5,0.3,0.8,0.4c0.2,0.1,0.5,0.2,0.7,0.2c0.2,0,0.4-0.1,0.5-0.2c0.1-0.1,0.2-0.4,0.3-0.7h0.8C39.5,1.6,39.3,2,39,2.4
+            s-0.7,0.5-1.1,0.5c-0.3,0-0.6-0.1-0.8-0.2c-0.3-0.1-0.5-0.3-0.8-0.4C36.1,2.1,35.9,2,35.6,2c-0.2,0-0.4,0.1-0.5,0.2
+            s-0.2,0.4-0.3,0.7H34z M49.7,8c0,1.3-0.3,2.4-1,3.1c-0.7,0.7-1.6,1.1-2.7,1.1c-0.7,0-1.3-0.2-1.9-0.5c-0.6-0.3-1-0.8-1.3-1.4
+            c-0.3-0.6-0.5-1.4-0.5-2.3c0-1.3,0.3-2.4,1-3.1s1.6-1.1,2.7-1.1c0.7,0,1.4,0.2,1.9,0.5c0.6,0.3,1,0.8,1.3,1.4S49.7,7.1,49.7,8z
+            M43.6,8c0,1,0.2,1.7,0.6,2.3c0.4,0.6,1,0.8,1.8,0.8c0.8,0,1.4-0.3,1.8-0.8c0.4-0.6,0.6-1.3,0.6-2.3s-0.2-1.7-0.6-2.2
+            s-1-0.8-1.8-0.8s-1.4,0.3-1.8,0.8S43.6,7,43.6,8z M53.1,12h-1.3V0.6h1.3V12z"></path></svg>
+                    </span>
+                </li>
+                <li class="preferred-languages__item custom-header-font-color" data-id="ru-RU">
+                    <span class="preferred-languages__item--title custom-header-font-color">
+                      <svg class="language-selection-item__name svg-ru-RU-3" viewBox="0 0 57 16">
+                          
+                      <path d="M3.3,1.3c1.4,0,2.4,0.3,3.1,0.8s1,1.3,1,2.3c0,0.6-0.1,1.1-0.4,1.7S6.2,7,5.6,7.3S4.1,7.8,3,7.8
+            H1.8V12H0.5V1.3H3.3z M3.2,2.4H1.8v4.2h1.1c1,0,1.8-0.2,2.3-0.5c0.5-0.3,0.8-0.9,0.8-1.7c0-0.7-0.2-1.2-0.7-1.5S4.1,2.4,3.2,2.4z
+            M8.1,4h1.4l1.7,4.6c0.2,0.4,0.3,0.8,0.4,1.2c0.1,0.4,0.2,0.7,0.3,1H12c0.1-0.3,0.2-0.6,0.3-1c0.1-0.4,0.3-0.8,0.4-1.2L14.3,4h1.4
+            l-3.5,9.1c-0.3,0.8-0.7,1.4-1.1,1.8c-0.4,0.5-1,0.7-1.8,0.7c-0.2,0-0.4,0-0.6,0s-0.3-0.1-0.5-0.1v-1c0.1,0,0.2,0,0.4,0.1
+            c0.2,0,0.3,0,0.5,0c0.5,0,0.8-0.1,1.1-0.4c0.3-0.3,0.5-0.6,0.7-1l0.4-1.1L8.1,4z M20.2,12.1c-0.7,0-1.4-0.1-1.9-0.4
+            c-0.6-0.3-1-0.7-1.3-1.4C16.7,9.8,16.5,9,16.5,8c0-1,0.2-1.8,0.5-2.4c0.3-0.6,0.8-1.1,1.3-1.4C19,4,19.6,3.8,20.3,3.8
+            c0.4,0,0.8,0,1.2,0.1s0.7,0.2,0.9,0.3L22,5.3c-0.2-0.1-0.5-0.2-0.8-0.3S20.6,5,20.3,5c-1.6,0-2.4,1-2.4,3c0,1,0.2,1.7,0.6,2.2
+            c0.4,0.5,1,0.8,1.7,0.8c0.4,0,0.8,0,1.2-0.1s0.6-0.2,0.9-0.3v1.2C22,11.9,21.7,12,21.4,12C21.1,12.1,20.7,12.1,20.2,12.1z
+            M27.4,12.1c-0.7,0-1.4-0.1-1.9-0.4c-0.6-0.3-1-0.7-1.3-1.4C23.9,9.8,23.8,9,23.8,8c0-1,0.2-1.8,0.5-2.4C24.6,5,25,4.5,25.6,4.2
+            s1.2-0.4,1.9-0.4c0.4,0,0.8,0,1.2,0.1c0.4,0.1,0.7,0.2,0.9,0.3l-0.4,1.1c-0.2-0.1-0.5-0.2-0.8-0.3S27.8,5,27.5,5c-1.6,0-2.4,1-2.4,3
+            c0,1,0.2,1.7,0.6,2.2c0.4,0.5,1,0.8,1.7,0.8c0.4,0,0.8,0,1.2-0.1s0.6-0.2,0.9-0.3v1.2c-0.3,0.1-0.6,0.2-0.9,0.3
+            C28.3,12.1,27.9,12.1,27.4,12.1z M36.2,4h1.4l-3.4,3.9l3.7,4.2h-1.5l-3.6-4.1V12h-1.3V4h1.3v3.9L36.2,4z M40.6,4v4.9
+            c0,0.1,0,0.3,0,0.5c0,0.2,0,0.5,0,0.7c0,0.2,0,0.4,0,0.6L44.8,4h1.6v8h-1.2V7.3c0-0.2,0-0.4,0-0.6c0-0.3,0-0.5,0-0.8
+            c0-0.3,0-0.4,0-0.6L41,12h-1.6V4H40.6z M50.2,4v4.9c0,0.1,0,0.3,0,0.5c0,0.2,0,0.5,0,0.7c0,0.2,0,0.4,0,0.6L54.4,4h1.6v8h-1.2V7.3
+            c0-0.2,0-0.4,0-0.6c0-0.3,0-0.5,0-0.8c0-0.3,0-0.4,0-0.6L50.6,12H49V4H50.2z M55.5,0.6c-0.1,0.8-0.3,1.3-0.8,1.7
+            c-0.4,0.4-1.1,0.6-2.1,0.6c-1,0-1.7-0.2-2.1-0.6s-0.6-0.9-0.7-1.7h1.2c0,0.5,0.2,0.9,0.4,1.1C51.8,1.9,52.2,2,52.7,2
+            c0.5,0,0.8-0.1,1.1-0.3c0.3-0.2,0.4-0.6,0.5-1.1H55.5z"></path></svg>
+                    </span>
+                </li>
+                <li class="preferred-languages__item custom-header-font-color" data-id="vi-VN">
+                    <span class="preferred-languages__item--title custom-header-font-color">
+                      <svg class="language-selection-item__name svg-vi-VN-4" viewBox="0 0 70 17">
+                          
+                      <path d="M4.8,13H3.5V3.5H0.2V2.3h8v1.2H4.8V13z M10.3,1.9c0.2,0,0.4,0.1,0.5,0.2s0.2,0.3,0.2,0.6
+            S11,3.3,10.8,3.4c-0.2,0.1-0.3,0.2-0.5,0.2c-0.2,0-0.4-0.1-0.6-0.2C9.6,3.3,9.5,3.1,9.5,2.8s0.1-0.5,0.2-0.6
+            C9.9,2,10.1,1.9,10.3,1.9z M10.9,5v8H9.6V5H10.9z M16.6,4.8c0.7,0,1.3,0.1,1.8,0.5c0.5,0.3,0.9,0.7,1.1,1.3s0.4,1.2,0.4,1.9v0.8
+            h-5.5c0,0.9,0.3,1.6,0.7,2.1c0.4,0.5,1.1,0.7,1.9,0.7c0.5,0,1,0,1.4-0.1c0.4-0.1,0.8-0.2,1.2-0.4v1.2c-0.4,0.2-0.8,0.3-1.2,0.4
+            s-0.9,0.1-1.4,0.1c-0.8,0-1.4-0.2-2-0.5c-0.6-0.3-1-0.8-1.4-1.4C13.2,10.7,13,9.9,13,9c0-0.9,0.1-1.6,0.4-2.3
+            c0.3-0.6,0.7-1.1,1.2-1.5C15.3,5,15.9,4.8,16.6,4.8z M16.6,5.9c-0.6,0-1.1,0.2-1.5,0.6c-0.4,0.4-0.6,1-0.7,1.7h4.1
+            c0-0.7-0.2-1.2-0.5-1.7S17.2,5.9,16.6,5.9z M18.3,2.3c0.2-0.3,0.4-0.5,0.5-0.7s0.3-0.5,0.4-0.8h1.3V1c-0.2,0.3-0.5,0.6-0.7,0.8
+            C19.5,2,19.3,2.3,19,2.5h-0.8V2.3z M18.8,3.9h-0.7c-0.2-0.2-0.5-0.3-0.8-0.6c-0.3-0.2-0.5-0.4-0.8-0.7c-0.3,0.2-0.5,0.4-0.8,0.7
+            S15.3,3.7,15,3.9h-0.7V3.7c0.3-0.3,0.5-0.6,0.8-0.9c0.3-0.3,0.5-0.7,0.8-1h1.4c0.2,0.3,0.5,0.7,0.8,1c0.3,0.3,0.6,0.6,0.8,0.9V3.9z
+            M25.8,4.8c1,0,1.7,0.2,2.2,0.7c0.5,0.5,0.7,1.2,0.7,2.2V13h-1.3V7.9c0-1.3-0.6-1.9-1.8-1.9c-0.9,0-1.5,0.2-1.8,0.8
+            s-0.5,1.2-0.5,2.2V13h-1.3V5H23l0.2,1.1h0.1c0.3-0.4,0.6-0.7,1.1-0.9C24.8,4.9,25.3,4.8,25.8,4.8z M34.1,4.8c0.5,0,1,0.1,1.4,0.3
+            c0.4,0.2,0.8,0.5,1.1,0.9h0.1L36.8,5h1v8.2c0,1.2-0.3,2-0.9,2.6c-0.6,0.6-1.5,0.9-2.7,0.9c-1.2,0-2.1-0.2-2.9-0.5v-1.2
+            c0.8,0.4,1.8,0.6,3,0.6c0.7,0,1.2-0.2,1.6-0.6s0.6-1,0.6-1.7v-0.3c0-0.1,0-0.3,0-0.5c0-0.2,0-0.4,0-0.5h-0.1
+            c-0.5,0.8-1.4,1.2-2.5,1.2c-1,0-1.9-0.4-2.4-1.1c-0.6-0.7-0.9-1.7-0.9-3.1c0-1.3,0.3-2.3,0.9-3.1C32.2,5.2,33,4.8,34.1,4.8z
+            M34.2,5.9c-0.7,0-1.2,0.3-1.6,0.8C32.3,7.3,32.1,8,32.1,9s0.2,1.7,0.5,2.3c0.4,0.5,0.9,0.8,1.6,0.8c0.8,0,1.4-0.2,1.8-0.7
+            c0.4-0.4,0.6-1.1,0.6-2.1V9c0-1.1-0.2-1.9-0.6-2.4C35.6,6.2,35.1,5.9,34.2,5.9z M52.1,2.3L48.2,13h-1.4L43.1,2.3h1.4l2.4,6.9
+            c0.2,0.4,0.3,0.9,0.4,1.2c0.1,0.4,0.2,0.8,0.3,1.1c0.1-0.4,0.2-0.7,0.3-1.1c0.1-0.4,0.2-0.8,0.4-1.3l2.4-6.8H52.1z M54,1.9
+            c0.2,0,0.4,0.1,0.5,0.2c0.2,0.1,0.2,0.3,0.2,0.6s-0.1,0.5-0.2,0.6c-0.2,0.1-0.3,0.2-0.5,0.2c-0.2,0-0.4-0.1-0.6-0.2
+            c-0.2-0.1-0.2-0.3-0.2-0.6s0.1-0.5,0.2-0.6S53.8,1.9,54,1.9z M54.7,5v8h-1.3V5H54.7z M60.3,4.8c0.7,0,1.3,0.1,1.8,0.5
+            C62.6,5.6,63,6,63.2,6.5c0.3,0.5,0.4,1.2,0.4,1.9v0.8h-5.5c0,0.9,0.3,1.6,0.7,2.1c0.4,0.5,1.1,0.7,1.9,0.7c0.5,0,1,0,1.4-0.1
+            c0.4-0.1,0.8-0.2,1.2-0.4v1.2c-0.4,0.2-0.8,0.3-1.2,0.4s-0.9,0.1-1.4,0.1c-0.8,0-1.4-0.2-2-0.5c-0.6-0.3-1-0.8-1.4-1.4
+            c-0.3-0.6-0.5-1.4-0.5-2.3c0-0.9,0.1-1.6,0.4-2.3s0.7-1.1,1.2-1.5C59,5,59.6,4.8,60.3,4.8z M60.3,5.9c-0.6,0-1.1,0.2-1.5,0.6
+            s-0.6,1-0.7,1.7h4.1c0-0.7-0.2-1.2-0.5-1.7S61,5.9,60.3,5.9z M60.9,1.5C61,1.7,61.2,2,61.4,2.3s0.5,0.5,0.7,0.8
+            c0.2,0.3,0.5,0.5,0.7,0.7v0.2h-0.9c-0.3-0.2-0.5-0.4-0.8-0.6c-0.3-0.2-0.6-0.5-0.8-0.8c-0.3,0.3-0.5,0.5-0.8,0.8
+            c-0.3,0.2-0.5,0.4-0.8,0.6h-0.9V3.7c0.2-0.2,0.4-0.4,0.6-0.7s0.5-0.5,0.7-0.8s0.4-0.5,0.5-0.7H60.9z M60.4,15.6
+            c-0.2,0-0.4-0.1-0.5-0.2c-0.2-0.1-0.2-0.3-0.2-0.6c0-0.3,0.1-0.5,0.2-0.6C60,14,60.2,14,60.4,14c0.2,0,0.4,0.1,0.5,0.2
+            c0.2,0.1,0.2,0.3,0.2,0.6c0,0.3-0.1,0.5-0.2,0.6C60.8,15.6,60.6,15.6,60.4,15.6z M68.4,12.1c0.2,0,0.4,0,0.6,0
+            c0.2,0,0.4-0.1,0.5-0.1v1c-0.1,0.1-0.3,0.1-0.6,0.2c-0.3,0-0.5,0.1-0.8,0.1c-0.4,0-0.8-0.1-1.2-0.2s-0.6-0.4-0.9-0.8
+            s-0.3-0.9-0.3-1.5V6h-1.1V5.3l1.2-0.5l0.5-1.7h0.8V5h2.3v1h-2.3v4.7c0,0.5,0.1,0.9,0.4,1.1C67.7,12,68,12.1,68.4,12.1z"></path></svg>
+                    </span>
+                </li>
+                <li class="preferred-languages__item custom-header-font-color" data-id="pt-BR">
+                    <span class="preferred-languages__item--title custom-header-font-color">
+                      <svg class="language-selection-item__name svg-pt-BR-5" viewBox="0 0 72 16">
+                          
+                      <path d="M3.3,1.3c1.4,0,2.4,0.3,3.1,0.8s1,1.3,1,2.3c0,0.6-0.1,1.1-0.4,1.7S6.2,7,5.6,7.3S4.1,7.8,3,7.8
+            H1.8V12H0.5V1.3H3.3z M3.2,2.4H1.8v4.2h1.1c1,0,1.8-0.2,2.3-0.5c0.5-0.3,0.8-0.9,0.8-1.7c0-0.7-0.2-1.2-0.7-1.5S4.1,2.4,3.2,2.4z
+            M16.3,8c0,1.3-0.3,2.4-1,3.1c-0.7,0.7-1.6,1.1-2.7,1.1c-0.7,0-1.3-0.2-1.9-0.5c-0.6-0.3-1-0.8-1.3-1.4S8.9,8.9,8.9,8
+            c0-1.3,0.3-2.4,1-3.1c0.7-0.7,1.6-1.1,2.7-1.1c0.7,0,1.4,0.2,1.9,0.5c0.6,0.3,1,0.8,1.3,1.4C16.2,6.3,16.3,7.1,16.3,8z M10.3,8
+            c0,1,0.2,1.7,0.6,2.3c0.4,0.6,1,0.8,1.8,0.8c0.8,0,1.4-0.3,1.8-0.8C14.8,9.7,15,8.9,15,8s-0.2-1.7-0.6-2.2s-1-0.8-1.8-0.8
+            c-0.8,0-1.4,0.3-1.8,0.8S10.3,7,10.3,8z M22.2,3.8c0.2,0,0.3,0,0.5,0c0.2,0,0.3,0,0.5,0.1L23,5.1c-0.1,0-0.3-0.1-0.4-0.1
+            c-0.2,0-0.3,0-0.4,0c-0.4,0-0.8,0.1-1.2,0.3c-0.4,0.2-0.6,0.5-0.9,0.9c-0.2,0.4-0.3,0.9-0.3,1.4V12h-1.3V4h1.1l0.2,1.5h0.1
+            c0.3-0.4,0.6-0.8,1-1.1C21.1,4,21.6,3.8,22.2,3.8z M27.3,11.1c0.2,0,0.4,0,0.6,0c0.2,0,0.4-0.1,0.5-0.1v1c-0.1,0.1-0.3,0.1-0.6,0.2
+            c-0.3,0-0.5,0.1-0.8,0.1c-0.4,0-0.8-0.1-1.2-0.2s-0.6-0.4-0.9-0.8s-0.3-0.9-0.3-1.5V5h-1.1V4.3l1.2-0.5l0.5-1.7H26V4h2.3v1H26v4.7
+            c0,0.5,0.1,0.9,0.4,1.1C26.6,11,26.9,11.1,27.3,11.1z M36.8,4v8h-1.1l-0.2-1.1h-0.1c-0.3,0.4-0.6,0.7-1.1,0.9s-0.9,0.3-1.5,0.3
+            c-1,0-1.7-0.2-2.2-0.7c-0.5-0.5-0.7-1.2-0.7-2.2V4h1.3v5.2c0,1.3,0.6,1.9,1.8,1.9c0.9,0,1.5-0.2,1.9-0.8c0.3-0.5,0.5-1.2,0.5-2.2V4
+            H36.8z M42.2,3.8c0.5,0,1,0.1,1.4,0.3C44,4.3,44.4,4.6,44.7,5h0.1L44.9,4h1v8.2c0,1.2-0.3,2-0.9,2.6c-0.6,0.6-1.5,0.9-2.7,0.9
+            c-1.2,0-2.1-0.2-2.9-0.5v-1.2c0.8,0.4,1.8,0.6,3,0.6c0.7,0,1.2-0.2,1.6-0.6c0.4-0.4,0.6-1,0.6-1.7v-0.3c0-0.1,0-0.3,0-0.5
+            c0-0.2,0-0.4,0-0.5h-0.1c-0.5,0.8-1.4,1.2-2.5,1.2c-1,0-1.9-0.4-2.4-1.1c-0.6-0.7-0.9-1.7-0.9-3.1c0-1.3,0.3-2.3,0.9-3.1
+            S41.1,3.8,42.2,3.8z M42.3,4.9c-0.7,0-1.2,0.3-1.6,0.8C40.4,6.3,40.2,7,40.2,8s0.2,1.7,0.5,2.3c0.4,0.5,0.9,0.8,1.6,0.8
+            c0.8,0,1.4-0.2,1.8-0.7c0.4-0.4,0.6-1.1,0.6-2.1V8c0-1.1-0.2-1.9-0.6-2.4S43.1,4.9,42.3,4.9z M55.2,4v8h-1.1L54,10.9h-0.1
+            c-0.3,0.4-0.6,0.7-1.1,0.9s-0.9,0.3-1.5,0.3c-1,0-1.7-0.2-2.2-0.7c-0.5-0.5-0.7-1.2-0.7-2.2V4h1.3v5.2c0,1.3,0.6,1.9,1.8,1.9
+            c0.9,0,1.5-0.2,1.9-0.8c0.3-0.5,0.5-1.2,0.5-2.2V4H55.2z M60.9,3.8c0.7,0,1.3,0.1,1.8,0.5c0.5,0.3,0.9,0.7,1.1,1.3
+            c0.3,0.5,0.4,1.2,0.4,1.9v0.8h-5.5c0,0.9,0.3,1.6,0.7,2.1c0.4,0.5,1.1,0.7,1.9,0.7c0.5,0,1,0,1.4-0.1c0.4-0.1,0.8-0.2,1.2-0.4v1.2
+            c-0.4,0.2-0.8,0.3-1.2,0.4s-0.9,0.1-1.4,0.1c-0.8,0-1.4-0.2-2-0.5c-0.6-0.3-1-0.8-1.4-1.4c-0.3-0.6-0.5-1.4-0.5-2.3
+            c0-0.9,0.1-1.6,0.4-2.3s0.7-1.1,1.2-1.5C59.6,4,60.2,3.8,60.9,3.8z M60.9,4.9c-0.6,0-1.1,0.2-1.5,0.6s-0.6,1-0.7,1.7h4.1
+            c0-0.7-0.2-1.2-0.5-1.7S61.6,4.9,60.9,4.9z M61.5,0.5C61.6,0.7,61.8,1,62,1.3s0.5,0.5,0.7,0.8c0.2,0.3,0.5,0.5,0.7,0.7v0.2h-0.9
+            c-0.3-0.2-0.5-0.4-0.8-0.6c-0.3-0.2-0.6-0.5-0.8-0.8c-0.3,0.3-0.5,0.5-0.8,0.8c-0.3,0.2-0.5,0.4-0.8,0.6h-0.9V2.7
+            c0.2-0.2,0.4-0.4,0.6-0.7s0.5-0.5,0.7-0.8s0.4-0.5,0.5-0.7H61.5z M71.5,9.8c0,0.8-0.3,1.4-0.9,1.8c-0.6,0.4-1.4,0.6-2.3,0.6
+            c-0.6,0-1,0-1.4-0.1c-0.4-0.1-0.8-0.2-1.1-0.4v-1.2c0.3,0.2,0.7,0.3,1.2,0.4c0.5,0.1,0.9,0.2,1.4,0.2c0.7,0,1.2-0.1,1.5-0.3
+            c0.3-0.2,0.5-0.5,0.5-0.9c0-0.2-0.1-0.4-0.2-0.5S69.7,9,69.5,8.9s-0.7-0.3-1.2-0.5c-0.5-0.2-1-0.4-1.3-0.6c-0.4-0.2-0.7-0.4-0.9-0.7
+            c-0.2-0.3-0.3-0.6-0.3-1.1c0-0.7,0.3-1.2,0.8-1.6c0.6-0.4,1.3-0.6,2.2-0.6c0.5,0,0.9,0,1.4,0.2c0.4,0.1,0.8,0.2,1.2,0.4l-0.5,1.1
+            c-0.3-0.1-0.7-0.3-1.1-0.4s-0.8-0.2-1.1-0.2c-0.5,0-1,0.1-1.2,0.3C67.2,5.3,67,5.6,67,5.9c0,0.2,0.1,0.4,0.2,0.6
+            c0.1,0.2,0.3,0.3,0.7,0.5c0.3,0.2,0.7,0.3,1.2,0.5S70,7.8,70.4,8s0.6,0.4,0.8,0.7C71.4,9,71.5,9.3,71.5,9.8z"></path></svg>
+                    </span>
+                </li>
+                <li class="preferred-languages__item custom-header-font-color" data-id="zh-CN">
+                    <span class="preferred-languages__item--title custom-header-font-color">
+                      <svg class="language-selection-item__name svg-zh-CN-6" viewBox="0 0 60 15">
+                          
+                      <path d="M4.1,2.6H3.2C2.8,3.4,2.2,4,1.7,4.5C1.5,4.3,1.1,4,0.8,3.9c1-0.8,1.9-2.1,2.3-3.5l1.1,0.3
+            C4.1,1,3.9,1.4,3.8,1.7h3.6v0.9H5.3c0.3,0.5,0.5,1,0.6,1.3l-1,0.4C4.8,3.9,4.5,3.2,4.1,2.6z M1.6,14.1V6.2h1.1v7.9H1.6z M2.4,4.7
+            l0.8-0.5C3.8,4.7,4.5,5.5,4.8,6L3.9,6.6C3.7,6.1,3,5.2,2.4,4.7z M9.3,7.9H5.7v1.2h3.7V7.9z M5.7,11.2h3.7V9.9H5.7V11.2z M10.4,12.1
+            H5.7v0.8h-1V7h5.8V12.1z M13.4,4.6v8.2c0,0.7-0.2,1-0.7,1.1c-0.5,0.2-1.4,0.2-2.7,0.2c-0.1-0.3-0.2-0.7-0.4-1c1,0,2.1,0,2.3,0
+            c0.3,0,0.4-0.1,0.4-0.3V5.6h-7v-1H13.4z M9.6,1.7h4.3v0.9h-2.4c0.3,0.5,0.6,0.9,0.7,1.3l-1,0.4c-0.2-0.5-0.6-1.2-1-1.7H9.1
+            C8.8,3.2,8.4,3.8,7.9,4.2C7.7,4.1,7.3,3.8,7,3.6c0.8-0.8,1.5-2,1.9-3.2L10,0.7C9.9,1,9.8,1.4,9.6,1.7z M18.8,0.5l1,0.3
+            C19.5,1.9,19,3,18.5,4v10.1h-1.1V5.8C17,6.5,16.6,7,16.2,7.6c-0.1-0.3-0.4-0.8-0.6-1.1C16.8,5,18.1,2.8,18.8,0.5z M29.2,4.5h-3.8
+            c0.9,2.5,2.4,5,4,6.3c-0.3,0.2-0.6,0.6-0.8,0.9c-1.6-1.4-3-4-3.9-6.6v5.2h2.4v1h-2.4v2.7h-1.1v-2.7h-2.4v-1h2.4V5.3
+            c-1,2.6-2.4,5.1-4,6.5c-0.2-0.3-0.6-0.6-0.8-0.8c1.6-1.3,3.2-3.8,4.1-6.4h-3.5V3.5h4.2v-3h1.1v3h4.5V4.5z M38,8.2h4.3v-4H38V8.2z
+            M32.6,8.2h4.3v-4h-4.3V8.2z M38,3.1h5.4v7h-1.1V9.3H38v4.9h-1.2V9.3h-4.3v0.9h-1.1V3.1h5.4V0.4H38V3.1z M53.7,2.7l-1.2,0.4
+            c-0.2-0.6-0.7-1.6-1.1-2.4l1.2-0.3C53,1.1,53.5,2,53.7,2.7z M55.6,4.2h-6.4c0.8,1.9,1.9,3.6,3.3,5C53.9,7.9,54.9,6.2,55.6,4.2z
+            M59.2,4.2h-2.4c-0.9,2.4-2,4.3-3.5,5.8c1.7,1.4,3.7,2.5,6.1,3c-0.3,0.3-0.6,0.7-0.8,1c-2.4-0.7-4.5-1.8-6.2-3.3
+            c-1.7,1.5-3.8,2.6-6.2,3.3c-0.1-0.3-0.5-0.8-0.7-1c2.5-0.7,4.5-1.7,6.1-3.1c-1.5-1.6-2.7-3.5-3.6-5.8h-2.3V3.1h13.4V4.2z"></path></svg>
+                    </span>
+                </li>
+                <li class="preferred-languages__item custom-header-font-color" data-id="zh-TW">
+                    <span class="preferred-languages__item--title custom-header-font-color">
+                      <svg class="language-selection-item__name svg-zh-TW-7" viewBox="0 0 60 15">
+                          
+                      <path d="M4.5,11.6l1,0.4c-1,0.8-2.5,1.5-3.8,1.9c-0.2-0.2-0.6-0.6-0.8-0.8C2.1,12.8,3.6,12.2,4.5,11.6z
+            M9.5,12.1l0.8-0.6c1.2,0.4,2.8,1.1,3.7,1.7l-0.8,0.6C12.3,13.3,10.7,12.5,9.5,12.1z M9.6,2.5L9.6,2.5c0.3,0.8,0.7,1.5,1.2,2.1
+            c0.5-0.6,1-1.2,1.2-2.1H9.6z M5.1,6.1h1c0.1-0.3,0.1-0.7,0.2-1.2H4.1c0.4,0.3,1,0.6,1.3,0.8L5.1,6.1z M3.9,4.9H2.7
+            c0,0.4-0.1,0.8-0.1,1.2h2.4C4.6,5.8,4,5.5,3.6,5.2L3.9,4.9z M4.1,3.2H2.9c0,0.4-0.1,0.8-0.1,1.1h2.4C4.8,4,4.3,3.7,3.8,3.4L4.1,3.2z
+            M5.2,4.3h1.1c0-0.3,0.1-0.7,0.1-1.1h-2c0.5,0.2,0.9,0.5,1.2,0.7L5.2,4.3z M14.2,2.5h-1.1c-0.4,1.1-0.9,2-1.6,2.7
+            c0.8,0.7,1.8,1.2,2.9,1.5c-0.2,0.2-0.5,0.6-0.6,0.8c-1.1-0.4-2.1-0.9-2.9-1.7c-0.7,0.6-1.6,1.1-2.6,1.5C8.2,7.1,7.9,6.8,7.7,6.6v0.2
+            H6.8C6.7,7,6.6,7.2,6.5,7.3C6.4,7.4,6.4,7.4,6.3,7.5C6.6,7.3,7,7.2,7.3,7L8,7.6C7.1,8,6.3,8.3,5.4,8.6L8,8.5C8.7,8.2,9.4,7.9,10,7.6
+            l0.6,0.7C8.9,9.1,7,9.8,5.2,10.4l5.7-0.3c-0.3-0.3-0.7-0.5-1-0.8l0.7-0.4c1,0.7,2.4,1.7,3,2.3l-0.8,0.5c-0.3-0.3-0.7-0.6-1.1-1
+            L8.1,11v2.1c0,0.6-0.1,0.8-0.6,1c-0.5,0.2-1.2,0.2-2.2,0.2c-0.1-0.3-0.2-0.7-0.4-0.9c0.9,0,1.6,0,1.8,0c0.2,0,0.3-0.1,0.3-0.2v-2
+            c-4.2,0.3-4.8,0.3-5.1,0.5c0-0.2-0.2-0.6-0.3-0.9c0.5,0,1.1-0.2,2-0.5C4.1,10,5,9.7,6.1,9.3c-2.6,0.1-3,0.1-3.2,0.2
+            c0-0.2-0.2-0.6-0.3-0.9c0.3,0,0.7-0.1,1.2-0.2C4.2,8.3,5.1,8,6.1,7.6C6,7.6,5.9,7.6,5.7,7.6c-0.2,0-0.7,0-1.1,0
+            c0-0.2-0.1-0.4-0.2-0.6c0.4,0,0.8,0,0.9,0s0.3,0,0.4-0.1c0,0,0-0.1,0.1-0.1H1.6c0.1-0.5,0.2-1.2,0.3-1.8H0.8V4.2H2
+            C2,3.7,2.1,3.2,2.1,2.7C1.9,2.9,1.6,3.2,1.4,3.4C1.2,3.2,0.8,3,0.6,2.8c0.8-0.6,1.6-1.5,2-2.4l0.9,0.2C3.4,0.8,3.3,1,3.2,1.2h4.6
+            v0.7h-5C2.6,2.1,2.4,2.3,2.2,2.5h5c0,0,0,0.3,0,0.4c0,0.5-0.1,1-0.1,1.3h0.9v0.7h-1c0,0.5-0.1,0.9-0.1,1.2h0.7v0.5
+            c1-0.3,1.8-0.8,2.6-1.4C9.8,4.7,9.4,4.1,9.1,3.4C8.8,3.7,8.6,4,8.3,4.3C8.2,4.1,7.8,3.8,7.6,3.6c0.9-0.7,1.5-1.9,1.9-3.2l1,0.2
+            c-0.1,0.4-0.2,0.7-0.4,1h4.1V2.5z M27.9,3.5V2.4h-1.2v1.1H27.9z M27.9,5.3V4.2h-1.2v1.1H27.9z M22.9,4.2v1.1h1.2V4.2H22.9z
+            M22.9,2.4v1.1h1.2V2.4H22.9z M26,4.2h-1.1v1.1H26V4.2z M24.8,3.5H26V2.4h-1.1V3.5z M28.8,1.6v4.5h-6.8V1.6h1.9V0.5h0.9v1.1h1.1V0.5
+            h0.9v1.1H28.8z M29.2,6.9v0.8h-7.5V6.9H29.2z M23.5,9.2v1.3h4V9.2H23.5z M28.5,11.2h-6V8.5h6V11.2z M20.6,6.9v-1h-3.9v1H20.6z
+            M17.4,1.8v3.3h0.9V2.8h1.6v-1H17.4z M19,5.1h1V3.5h-1V5.1z M20.9,1v4.1h0.6v2.1h-0.7V13c0,0.5-0.1,0.7-0.4,0.9
+            c-0.3,0.1-0.8,0.2-1.7,0.2c0-0.2-0.2-0.6-0.3-0.9c0.6,0,1.1,0,1.3,0c0.2,0,0.2-0.1,0.2-0.2v-2c-0.7,0.4-1.4,0.9-2,1.2l-0.4-0.8
+            c0.6-0.3,1.5-0.7,2.4-1.2V7.7h-2.4v2c0,1.4-0.1,3.2-1,4.5c-0.2-0.2-0.6-0.5-0.8-0.6c0.8-1.1,0.9-2.7,0.9-3.9V7.3h-0.7V5.1h0.6V1
+            H20.9z M19.8,9.5l-0.6,0.6c-0.4-0.4-1-0.9-1.6-1.3l0.5-0.5C18.7,8.7,19.4,9.2,19.8,9.5z M27.1,13h2.3v0.9h-7.8V13h2.1
+            c-0.1-0.4-0.3-1-0.5-1.4l0.9-0.3c0.2,0.5,0.5,1.2,0.6,1.7h1.4c0.2-0.5,0.5-1.2,0.6-1.7l1,0.3C27.6,12,27.3,12.6,27.1,13z M38,8.2
+            h4.3v-4H38V8.2z M32.6,8.2h4.3v-4h-4.3V8.2z M38,3.1h5.4v7h-1.1V9.3H38v4.9h-1.2V9.3h-4.3v0.9h-1.1V3.1h5.4V0.4H38V3.1z M53.7,2.7
+            l-1.2,0.4c-0.2-0.6-0.7-1.6-1.1-2.4l1.2-0.3C53,1.1,53.5,2,53.7,2.7z M55.6,4.2h-6.4c0.8,1.9,1.9,3.6,3.3,5
+            C53.9,7.9,54.9,6.2,55.6,4.2z M59.2,4.2h-2.4c-0.9,2.4-2,4.3-3.5,5.8c1.7,1.4,3.7,2.5,6.1,3c-0.3,0.3-0.6,0.7-0.8,1
+            c-2.4-0.7-4.5-1.8-6.2-3.3c-1.7,1.5-3.8,2.6-6.2,3.3c-0.1-0.3-0.5-0.8-0.7-1c2.5-0.7,4.5-1.7,6.1-3.1c-1.5-1.6-2.7-3.5-3.6-5.8h-2.3
+            V3.1h13.4V4.2z"></path></svg>
+                    </span>
+                </li>
+                <li class="preferred-languages__item custom-header-font-color" data-id="ja-JP">
+                    <span class="preferred-languages__item--title custom-header-font-color">
+                      <svg class="language-selection-item__name svg-ja-JP-8" viewBox="0 0 43 15">
+                          
+                      <path d="M1.8,11.9h7.4V7.7H1.8V11.9z M9.3,2.6H1.8v4.1h7.4V2.6z M0.7,1.5h9.7v12.4H9.3V13H1.8v1H0.7V1.5
+            z M27,4.7h-5.2c1.2,2.6,3.4,4.9,5.8,6.1c-0.3,0.2-0.7,0.7-0.8,1c-2.3-1.2-4.3-3.5-5.6-6.1v4.6h2.9v1.1h-2.9v2.8h-1.2v-2.8H17v-1.1
+            h2.9V5.7c-1.4,2.6-3.4,4.9-5.6,6.1c-0.2-0.3-0.5-0.7-0.8-0.9c2.3-1.2,4.5-3.6,5.7-6.2H14V3.6h5.9V0.5h1.2v3.1H27V4.7z M33.5,1v0.9
+            h-4.1V1H33.5z M32.6,10h-2.3v2.5h2.3V10z M33.6,9.1v4.3h-3.3v0.7h-1v-5H33.6z M29.3,8V7.1h4.2V8H29.3z M33.5,5v0.9h-4.2V5H33.5z
+            M28.6,3.9V3H34v0.9H28.6z M40.4,9.8h-4.2v2.7h4.2V9.8z M35.2,14.1V8.8h6.3v5.3h-1.1v-0.6h-4.2v0.7H35.2z M40,4.5h-2.5
+            c-0.1,0.8-0.3,1.5-0.4,2.2H40V4.5z M41.1,6.7h1.3v1h-8.3v-1h2c0.1-0.6,0.3-1.4,0.4-2.2h-1.7v-1h1.8c0.1-0.5,0.2-1,0.2-1.5h-2.3V1
+            h7.4v1h-4c-0.1,0.5-0.2,1-0.3,1.5h3.4V6.7z"></path></svg>
+                    </span>
+                </li>
+                <li class="preferred-languages__item custom-header-font-color" data-id="fil-PH">
+                    <span class="preferred-languages__item--title custom-header-font-color">
+                      <svg class="language-selection-item__name svg-fil-PH-9" viewBox="0 0 49 16">
+                          
+                      <path d="M1.8,12H0.5V1.3h6v1.2H1.8v3.8h4.4v1.2H1.8V12z M8.7,0.9c0.2,0,0.4,0.1,0.5,0.2s0.2,0.3,0.2,0.6
+            S9.4,2.3,9.3,2.4C9.1,2.6,8.9,2.6,8.7,2.6c-0.2,0-0.4-0.1-0.6-0.2C8,2.3,8,2.1,8,1.8S8,1.3,8.2,1.1C8.3,1,8.5,0.9,8.7,0.9z M9.4,4v8
+            H8.1V4H9.4z M13.2,12h-1.3V0.6h1.3V12z M16.5,0.9c0.2,0,0.4,0.1,0.5,0.2s0.2,0.3,0.2,0.6S17.2,2.3,17,2.4c-0.2,0.1-0.3,0.2-0.5,0.2
+            c-0.2,0-0.4-0.1-0.6-0.2c-0.2-0.1-0.2-0.3-0.2-0.6s0.1-0.5,0.2-0.6C16.1,1,16.3,0.9,16.5,0.9z M17.1,4v8h-1.3V4H17.1z M23.5,3.8
+            c1,0,1.8,0.3,2.4,1c0.6,0.7,0.9,1.7,0.9,3.1c0,1.4-0.3,2.4-0.9,3.1c-0.6,0.7-1.4,1.1-2.4,1.1c-0.6,0-1.1-0.1-1.5-0.3
+            c-0.4-0.2-0.7-0.5-1-0.8h-0.1c0,0.2,0,0.4,0.1,0.6c0,0.3,0,0.5,0,0.7v3.3h-1.3V4h1.1l0.2,1.1H21c0.2-0.4,0.6-0.6,0.9-0.9
+            C22.3,3.9,22.8,3.8,23.5,3.8z M23.3,4.9c-0.8,0-1.4,0.2-1.7,0.7C21.2,6.1,21,6.8,21,7.7V8c0,1,0.2,1.8,0.5,2.3
+            c0.3,0.5,0.9,0.8,1.8,0.8c0.5,0,0.9-0.1,1.2-0.4S25,10,25.2,9.6c0.2-0.5,0.2-1,0.2-1.6c0-0.9-0.2-1.7-0.5-2.2
+            C24.5,5.2,24,4.9,23.3,4.9z M29.6,0.9c0.2,0,0.4,0.1,0.5,0.2c0.2,0.1,0.2,0.3,0.2,0.6s-0.1,0.5-0.2,0.6c-0.2,0.1-0.3,0.2-0.5,0.2
+            c-0.2,0-0.4-0.1-0.6-0.2c-0.1-0.1-0.2-0.3-0.2-0.6s0.1-0.5,0.2-0.6C29.2,1,29.3,0.9,29.6,0.9z M30.2,4v8h-1.3V4H30.2z M36.6,3.8
+            c1,0,1.7,0.2,2.2,0.7c0.5,0.5,0.7,1.2,0.7,2.2V12h-1.3V6.9c0-1.3-0.6-1.9-1.8-1.9c-0.9,0-1.5,0.2-1.8,0.8c-0.3,0.5-0.5,1.2-0.5,2.2
+            V12h-1.3V4h1.1L34,5.1h0.1c0.3-0.4,0.6-0.7,1.1-0.9C35.6,3.9,36.1,3.8,36.6,3.8z M49,8c0,1.3-0.3,2.4-1,3.1
+            c-0.7,0.7-1.6,1.1-2.7,1.1c-0.7,0-1.3-0.2-1.9-0.5c-0.6-0.3-1-0.8-1.3-1.4c-0.3-0.6-0.5-1.4-0.5-2.3c0-1.3,0.3-2.4,1-3.1
+            s1.6-1.1,2.7-1.1c0.7,0,1.4,0.2,1.9,0.5c0.6,0.3,1,0.8,1.3,1.4C48.9,6.3,49,7.1,49,8z M43,8c0,1,0.2,1.7,0.6,2.3
+            c0.4,0.6,1,0.8,1.8,0.8c0.8,0,1.4-0.3,1.8-0.8c0.4-0.6,0.6-1.3,0.6-2.3s-0.2-1.7-0.6-2.2s-1-0.8-1.8-0.8s-1.4,0.3-1.8,0.8
+            C43.1,6.3,43,7,43,8z"></path></svg>
+                    </span>
+                </li>
+                <li class="preferred-languages__item custom-header-font-color" data-id="ko-KR">
+                    <span class="preferred-languages__item--title custom-header-font-color">
+                      <svg class="language-selection-item__name svg-ko-KR-10" viewBox="0 0 40 15">
+                          
+                      <path d="M8.8,2.3v1H0.8v-1h3.3V0.7h1.2v1.6H8.8z M2.8,6.5c0,0.9,0.8,1.5,2,1.5c1.2,0,2.1-0.6,2.1-1.5
+            C6.9,5.6,6,5,4.8,5C3.6,5,2.8,5.6,2.8,6.5z M8,6.5C8,8.1,6.7,9,4.8,9s-3.2-1-3.2-2.5C1.6,5,2.9,4,4.8,4S8,5,8,6.5z M4.1,10v2.9h7.7
+            v1h-9V10H4.1z M11.2,5.1h2v1h-2v4.6H10V0.7h1.2V5.1z M26.8,7.1h-5.5v2.5h4v4.5h-1.2v-3.5h-8.2v-1h4.2V7.1h-5.5v-1h9.1
+            C24,4.5,24,3.3,24,2.3h-7.9v-1h9.1v1c0,1,0,2.2-0.3,3.8h1.9V7.1z M32,10c1.3,0,2.2-1.4,2.2-3.6c0-2.2-0.9-3.6-2.2-3.6
+            c-1.3,0-2.2,1.4-2.2,3.6C29.8,8.6,30.7,10,32,10z M38.2,0.7h1.2v13.5h-1.2V6.8h-2.9c-0.1,2.6-1.5,4.3-3.3,4.3c-2,0-3.4-1.8-3.4-4.7
+            S30,1.7,32,1.7c1.8,0,3.1,1.6,3.3,4.1h2.9V0.7z"></path></svg>
+                    </span>
+                </li>
+                <li class="preferred-languages__item custom-header-font-color" data-id="fr-FR">
+                    <span class="preferred-languages__item--title custom-header-font-color">
+                      <svg class="language-selection-item__name svg-fr-FR-11" viewBox="0 0 57 16">
+                          
+                      <path d="M1.8,12H0.5V1.3h6v1.2H1.8v3.8h4.4v1.2H1.8V12z M11.8,3.8c0.2,0,0.3,0,0.5,0s0.3,0,0.5,0.1
+            l-0.2,1.2c-0.1,0-0.3-0.1-0.4-0.1s-0.3,0-0.4,0c-0.4,0-0.8,0.1-1.2,0.3c-0.4,0.2-0.6,0.5-0.9,0.9S9.4,7.2,9.4,7.7V12H8.1V4h1.1
+            l0.1,1.5h0.1c0.3-0.4,0.6-0.8,1-1.1S11.2,3.8,11.8,3.8z M17,3.8c1,0,1.7,0.2,2.2,0.6c0.5,0.4,0.7,1.1,0.7,2.1V12h-1l-0.3-1.1h-0.1
+            c-0.4,0.4-0.7,0.8-1.1,1c-0.4,0.2-0.9,0.3-1.6,0.3c-0.7,0-1.3-0.2-1.8-0.6s-0.7-1-0.7-1.8c0-0.8,0.3-1.4,0.9-1.9
+            c0.6-0.4,1.6-0.7,2.9-0.7l1.4,0V6.7c0-0.7-0.1-1.1-0.4-1.4c-0.3-0.3-0.7-0.4-1.2-0.4c-0.4,0-0.8,0.1-1.2,0.2
+            c-0.4,0.1-0.7,0.3-1.1,0.4l-0.4-1C14.6,4.3,15,4.2,15.5,4S16.5,3.8,17,3.8z M18.6,8.1l-1.2,0c-1,0-1.7,0.2-2.1,0.5
+            c-0.4,0.3-0.6,0.7-0.6,1.2c0,0.5,0.1,0.8,0.4,1c0.3,0.2,0.6,0.3,1.1,0.3c0.7,0,1.2-0.2,1.7-0.6s0.7-1,0.7-1.7V8.1z M26.2,3.8
+            c1,0,1.7,0.2,2.2,0.7c0.5,0.5,0.7,1.2,0.7,2.2V12h-1.3V6.9c0-1.3-0.6-1.9-1.8-1.9c-0.9,0-1.5,0.2-1.8,0.8c-0.3,0.5-0.5,1.2-0.5,2.2
+            V12h-1.3V4h1.1l0.2,1.1h0.1c0.3-0.4,0.6-0.7,1.1-0.9C25.2,3.9,25.7,3.8,26.2,3.8z M34.9,12.1c-0.7,0-1.4-0.1-1.9-0.4
+            c-0.6-0.3-1-0.7-1.3-1.4C31.3,9.8,31.2,9,31.2,8c0-1,0.2-1.8,0.5-2.4C32,5,32.4,4.5,33,4.2s1.2-0.4,1.9-0.4c0.4,0,0.8,0,1.2,0.1
+            s0.7,0.2,0.9,0.3l-0.4,1.1c-0.2-0.1-0.5-0.2-0.8-0.3C35.5,5,35.2,5,34.9,5c-1.6,0-2.4,1-2.4,3c0,1,0.2,1.7,0.6,2.2
+            c0.4,0.5,1,0.8,1.7,0.8c0.4,0,0.8,0,1.2-0.1c0.3-0.1,0.6-0.2,0.9-0.3v1.2C36.7,11.9,36.4,12,36,12C35.7,12.1,35.3,12.1,34.9,12.1z
+            M36.1,14.1c0,0.5-0.2,0.9-0.6,1.1s-0.9,0.4-1.7,0.4c-0.3,0-0.6,0-0.8-0.1v-0.8c0.1,0,0.2,0,0.4,0.1c0.2,0,0.3,0,0.4,0
+            c0.4,0,0.6,0,0.8-0.1c0.2-0.1,0.3-0.3,0.3-0.5c0-0.3-0.1-0.4-0.4-0.6c-0.3-0.1-0.6-0.2-1-0.3l0.6-1.3h0.9l-0.4,0.8
+            c0.4,0.1,0.7,0.2,0.9,0.4S36.1,13.7,36.1,14.1z M41.9,3.8c1,0,1.7,0.2,2.2,0.6c0.5,0.4,0.7,1.1,0.7,2.1V12h-1l-0.3-1.1h-0.1
+            c-0.4,0.4-0.7,0.8-1.1,1c-0.4,0.2-0.9,0.3-1.6,0.3c-0.7,0-1.3-0.2-1.8-0.6c-0.5-0.4-0.7-1-0.7-1.8c0-0.8,0.3-1.4,0.9-1.9
+            c0.6-0.4,1.6-0.7,2.9-0.7l1.4,0V6.7c0-0.7-0.1-1.1-0.4-1.4c-0.3-0.3-0.7-0.4-1.2-0.4c-0.4,0-0.8,0.1-1.2,0.2
+            c-0.4,0.1-0.7,0.3-1.1,0.4l-0.4-1c0.4-0.2,0.8-0.4,1.2-0.5C40.9,3.9,41.4,3.8,41.9,3.8z M43.5,8.1l-1.2,0c-1,0-1.7,0.2-2.1,0.5
+            c-0.4,0.3-0.6,0.7-0.6,1.2c0,0.5,0.1,0.8,0.4,1c0.3,0.2,0.6,0.3,1.1,0.3c0.7,0,1.2-0.2,1.7-0.6s0.7-1,0.7-1.7V8.1z M47.9,0.9
+            c0.2,0,0.4,0.1,0.5,0.2c0.2,0.1,0.2,0.3,0.2,0.6s-0.1,0.5-0.2,0.6c-0.2,0.1-0.3,0.2-0.5,0.2c-0.2,0-0.4-0.1-0.6-0.2
+            c-0.2-0.1-0.2-0.3-0.2-0.6s0.1-0.5,0.2-0.6S47.7,0.9,47.9,0.9z M48.6,4v8h-1.3V4H48.6z M56.4,9.8c0,0.8-0.3,1.4-0.9,1.8
+            c-0.6,0.4-1.4,0.6-2.3,0.6c-0.6,0-1,0-1.4-0.1c-0.4-0.1-0.8-0.2-1.1-0.4v-1.2c0.3,0.2,0.7,0.3,1.2,0.4c0.5,0.1,0.9,0.2,1.4,0.2
+            c0.7,0,1.2-0.1,1.5-0.3c0.3-0.2,0.5-0.5,0.5-0.9c0-0.2-0.1-0.4-0.2-0.5S54.6,9,54.3,8.9c-0.3-0.2-0.7-0.3-1.2-0.5
+            c-0.5-0.2-1-0.4-1.3-0.6c-0.4-0.2-0.7-0.4-0.9-0.7c-0.2-0.3-0.3-0.6-0.3-1.1c0-0.7,0.3-1.2,0.8-1.6C52,4,52.7,3.8,53.6,3.8
+            c0.5,0,0.9,0,1.4,0.2c0.4,0.1,0.8,0.2,1.2,0.4l-0.5,1.1c-0.3-0.1-0.7-0.3-1.1-0.4s-0.8-0.2-1.1-0.2c-0.5,0-1,0.1-1.2,0.3
+            c-0.3,0.2-0.4,0.4-0.4,0.7c0,0.2,0.1,0.4,0.2,0.6s0.3,0.3,0.7,0.5C53,7,53.4,7.2,53.9,7.4s0.9,0.4,1.3,0.6s0.6,0.4,0.8,0.7
+            C56.3,9,56.4,9.3,56.4,9.8z"></path></svg>
+                    </span>
+                </li>
+                <li class="preferred-languages__item custom-header-font-color" data-id="de-DE">
+                    <span class="preferred-languages__item--title custom-header-font-color">
+                      <svg class="language-selection-item__name svg-de-DE-12" viewBox="0 0 65 13">
+                          
+                      <path d="M9,6.5c0,1.8-0.5,3.2-1.5,4.1c-1,0.9-2.4,1.4-4.1,1.4h-3V1.3h3.3c1.1,0,2,0.2,2.8,0.6
+            s1.4,1,1.8,1.8C8.8,4.4,9,5.4,9,6.5z M7.6,6.6c0-1.4-0.4-2.5-1.1-3.1s-1.7-1-3-1H1.8v8.4h1.5C6.2,10.8,7.6,9.4,7.6,6.6z M14.3,3.8
+            c0.7,0,1.3,0.1,1.8,0.5C16.6,4.6,17,5,17.2,5.5s0.4,1.2,0.4,1.9v0.8h-5.5c0,0.9,0.3,1.6,0.7,2.1c0.4,0.5,1.1,0.7,1.9,0.7
+            c0.5,0,1,0,1.4-0.1c0.4-0.1,0.8-0.2,1.2-0.4v1.2c-0.4,0.2-0.8,0.3-1.2,0.4s-0.9,0.1-1.4,0.1c-0.8,0-1.4-0.2-2-0.5
+            c-0.6-0.3-1-0.8-1.4-1.4c-0.3-0.6-0.5-1.4-0.5-2.3c0-0.9,0.1-1.6,0.4-2.3c0.3-0.6,0.7-1.1,1.2-1.5S13.6,3.8,14.3,3.8z M14.3,4.9
+            c-0.6,0-1.1,0.2-1.5,0.6s-0.6,1-0.7,1.7h4.1c0-0.7-0.2-1.2-0.5-1.7S15,4.9,14.3,4.9z M26.4,4v8h-1.1l-0.2-1.1h-0.1
+            c-0.3,0.4-0.6,0.7-1.1,0.9s-0.9,0.3-1.5,0.3c-1,0-1.7-0.2-2.2-0.7c-0.5-0.5-0.7-1.2-0.7-2.2V4h1.3v5.2c0,1.3,0.6,1.9,1.8,1.9
+            c0.9,0,1.5-0.2,1.9-0.8c0.3-0.5,0.5-1.2,0.5-2.2V4H26.4z M31.6,11.1c0.2,0,0.4,0,0.6,0c0.2,0,0.4-0.1,0.5-0.1v1
+            c-0.1,0.1-0.3,0.1-0.6,0.2c-0.3,0-0.5,0.1-0.8,0.1c-0.4,0-0.8-0.1-1.2-0.2s-0.6-0.4-0.9-0.8s-0.3-0.9-0.3-1.5V5h-1.1V4.3l1.2-0.5
+            l0.5-1.7h0.8V4h2.3v1h-2.3v4.7c0,0.5,0.1,0.9,0.4,1.1C31,11,31.3,11.1,31.6,11.1z M39.6,9.8c0,0.8-0.3,1.4-0.9,1.8
+            c-0.6,0.4-1.4,0.6-2.3,0.6c-0.6,0-1,0-1.4-0.1c-0.4-0.1-0.8-0.2-1.1-0.4v-1.2c0.3,0.2,0.7,0.3,1.2,0.4c0.5,0.1,0.9,0.2,1.4,0.2
+            c0.7,0,1.2-0.1,1.5-0.3c0.3-0.2,0.5-0.5,0.5-0.9c0-0.2-0.1-0.4-0.2-0.5S37.9,9,37.6,8.9c-0.3-0.2-0.7-0.3-1.2-0.5
+            c-0.5-0.2-1-0.4-1.3-0.6c-0.4-0.2-0.7-0.4-0.9-0.7c-0.2-0.3-0.3-0.6-0.3-1.1c0-0.7,0.3-1.2,0.8-1.6C35.2,4,36,3.8,36.9,3.8
+            c0.5,0,0.9,0,1.4,0.2c0.4,0.1,0.8,0.2,1.2,0.4L39,5.4c-0.3-0.1-0.7-0.3-1.1-0.4s-0.7-0.2-1.1-0.2c-0.5,0-1,0.1-1.2,0.3
+            c-0.3,0.2-0.4,0.4-0.4,0.7c0,0.2,0.1,0.4,0.2,0.6s0.3,0.3,0.7,0.5c0.3,0.2,0.7,0.3,1.2,0.5s0.9,0.4,1.3,0.6c0.4,0.2,0.6,0.4,0.8,0.7
+            C39.5,9,39.6,9.3,39.6,9.8z M44.8,12.1c-0.7,0-1.4-0.1-1.9-0.4c-0.6-0.3-1-0.7-1.3-1.4C41.3,9.8,41.1,9,41.1,8c0-1,0.2-1.8,0.5-2.4
+            c0.3-0.6,0.8-1.1,1.3-1.4c0.6-0.3,1.2-0.4,1.9-0.4c0.4,0,0.8,0,1.2,0.1s0.7,0.2,0.9,0.3l-0.4,1.1c-0.2-0.1-0.5-0.2-0.8-0.3
+            C45.4,5,45.1,5,44.8,5c-1.6,0-2.4,1-2.4,3c0,1,0.2,1.7,0.6,2.2c0.4,0.5,1,0.8,1.7,0.8c0.4,0,0.8,0,1.2-0.1c0.3-0.1,0.7-0.2,0.9-0.3
+            v1.2C46.6,11.9,46.3,12,46,12C45.6,12.1,45.2,12.1,44.8,12.1z M50.1,0.6v3.3c0,0.4,0,0.8-0.1,1.1h0.1c0.3-0.4,0.6-0.7,1.1-0.9
+            c0.4-0.2,0.9-0.3,1.4-0.3c1,0,1.7,0.2,2.2,0.7c0.5,0.5,0.7,1.2,0.7,2.2V12h-1.3V6.9c0-1.3-0.6-1.9-1.8-1.9c-0.9,0-1.5,0.3-1.9,0.8
+            s-0.5,1.2-0.5,2.2V12h-1.3V0.6H50.1z M61.1,3.8c0.7,0,1.3,0.1,1.8,0.5C63.4,4.6,63.8,5,64,5.5c0.3,0.5,0.4,1.2,0.4,1.9v0.8h-5.5
+            c0,0.9,0.3,1.6,0.7,2.1c0.4,0.5,1.1,0.7,1.9,0.7c0.5,0,1,0,1.4-0.1c0.4-0.1,0.8-0.2,1.2-0.4v1.2c-0.4,0.2-0.8,0.3-1.2,0.4
+            s-0.9,0.1-1.4,0.1c-0.8,0-1.4-0.2-2-0.5c-0.6-0.3-1-0.8-1.4-1.4c-0.3-0.6-0.5-1.4-0.5-2.3c0-0.9,0.1-1.6,0.4-2.3
+            c0.3-0.6,0.7-1.1,1.2-1.5S60.4,3.8,61.1,3.8z M61.1,4.9c-0.6,0-1.1,0.2-1.5,0.6S59,6.5,59,7.2h4.1c0-0.7-0.2-1.2-0.5-1.7
+            S61.8,4.9,61.1,4.9z"></path></svg>
+                    </span>
+                </li>
+                <li class="preferred-languages__item custom-header-font-color" data-id="it-IT">
+                    <span class="preferred-languages__item--title custom-header-font-color">
+                      <svg class="language-selection-item__name svg-it-IT-13" viewBox="0 0 53 13">
+                          
+                      <path d="M4.5,12H0.6v-0.8l1.3-0.3V2.4L0.6,2.1V1.3h3.9v0.8L3.2,2.4v8.6l1.3,0.3V12z M9,11.1
+            c0.2,0,0.4,0,0.6,0c0.2,0,0.4-0.1,0.5-0.1v1C10,12,9.8,12,9.6,12.1c-0.3,0-0.5,0.1-0.8,0.1c-0.4,0-0.8-0.1-1.2-0.2
+            c-0.4-0.1-0.6-0.4-0.9-0.8s-0.3-0.9-0.3-1.5V5H5.3V4.3l1.2-0.5L7,2.1h0.8V4h2.3v1H7.8v4.7c0,0.5,0.1,0.9,0.4,1.1
+            C8.4,11,8.7,11.1,9,11.1z M14.8,3.8c1,0,1.7,0.2,2.2,0.6c0.5,0.4,0.7,1.1,0.7,2.1V12h-1l-0.3-1.1h-0.1c-0.4,0.4-0.7,0.8-1.1,1
+            c-0.4,0.2-0.9,0.3-1.6,0.3c-0.7,0-1.3-0.2-1.8-0.6s-0.7-1-0.7-1.8c0-0.8,0.3-1.4,0.9-1.9s1.6-0.7,2.9-0.7l1.4,0V6.7
+            c0-0.7-0.1-1.1-0.4-1.4c-0.3-0.3-0.7-0.4-1.2-0.4c-0.4,0-0.8,0.1-1.2,0.2c-0.4,0.1-0.7,0.3-1.1,0.4l-0.4-1c0.4-0.2,0.8-0.4,1.2-0.5
+            S14.3,3.8,14.8,3.8z M16.4,8.1l-1.2,0c-1,0-1.7,0.2-2.1,0.5c-0.4,0.3-0.6,0.7-0.6,1.2c0,0.5,0.1,0.8,0.4,1c0.3,0.2,0.6,0.3,1.1,0.3
+            c0.7,0,1.2-0.2,1.7-0.6s0.7-1,0.7-1.7V8.1z M21.5,12h-1.3V0.6h1.3V12z M24.7,0.9c0.2,0,0.4,0.1,0.5,0.2s0.2,0.3,0.2,0.6
+            s-0.1,0.5-0.2,0.6c-0.2,0.1-0.3,0.2-0.5,0.2c-0.2,0-0.4-0.1-0.6-0.2C24,2.3,24,2.1,24,1.8s0.1-0.5,0.2-0.6C24.3,1,24.5,0.9,24.7,0.9
+            z M25.4,4v8h-1.3V4H25.4z M31,3.8c1,0,1.7,0.2,2.2,0.6c0.5,0.4,0.7,1.1,0.7,2.1V12h-1l-0.3-1.1h-0.1c-0.4,0.4-0.7,0.8-1.1,1
+            c-0.4,0.2-0.9,0.3-1.6,0.3c-0.7,0-1.3-0.2-1.8-0.6c-0.5-0.4-0.7-1-0.7-1.8c0-0.8,0.3-1.4,0.9-1.9c0.6-0.4,1.6-0.7,2.9-0.7l1.4,0V6.7
+            c0-0.7-0.1-1.1-0.4-1.4c-0.3-0.3-0.7-0.4-1.2-0.4c-0.4,0-0.8,0.1-1.2,0.2c-0.4,0.1-0.7,0.3-1.1,0.4l-0.4-1C28.6,4.3,29,4.2,29.5,4
+            C30,3.9,30.5,3.8,31,3.8z M32.5,8.1l-1.2,0c-1,0-1.7,0.2-2.1,0.5c-0.4,0.3-0.6,0.7-0.6,1.2c0,0.5,0.1,0.8,0.4,1
+            c0.3,0.2,0.6,0.3,1.1,0.3c0.7,0,1.2-0.2,1.7-0.6s0.7-1,0.7-1.7V8.1z M40.2,3.8c1,0,1.7,0.2,2.2,0.7c0.5,0.5,0.7,1.2,0.7,2.2V12h-1.3
+            V6.9c0-1.3-0.6-1.9-1.8-1.9c-0.9,0-1.5,0.2-1.8,0.8c-0.3,0.5-0.5,1.2-0.5,2.2V12h-1.3V4h1.1l0.2,1.1h0.1c0.3-0.4,0.6-0.7,1.1-0.9
+            C39.2,3.9,39.7,3.8,40.2,3.8z M52.6,8c0,1.3-0.3,2.4-1,3.1c-0.7,0.7-1.6,1.1-2.7,1.1c-0.7,0-1.3-0.2-1.9-0.5c-0.6-0.3-1-0.8-1.3-1.4
+            c-0.3-0.6-0.5-1.4-0.5-2.3c0-1.3,0.3-2.4,1-3.1c0.7-0.7,1.6-1.1,2.7-1.1c0.7,0,1.4,0.2,1.9,0.5s1,0.8,1.3,1.4S52.6,7.1,52.6,8z
+            M46.5,8c0,1,0.2,1.7,0.6,2.3c0.4,0.6,1,0.8,1.8,0.8c0.8,0,1.4-0.3,1.8-0.8c0.4-0.6,0.6-1.3,0.6-2.3s-0.2-1.7-0.6-2.2
+            c-0.4-0.5-1-0.8-1.8-0.8s-1.4,0.3-1.8,0.8S46.5,7,46.5,8z"></path></svg>
+                    </span>
+                </li>
+                <li class="preferred-languages__item custom-header-font-color" data-id="ht-HT">
+                    <span class="preferred-languages__item--title custom-header-font-color">
+                      <svg class="language-selection-item__name svg-ht-HT-14" viewBox="0 0 92 16">
+                          
+                      <path d="M8.2,12L6.9,8.7H2.6L1.4,12H0L4.2,1.2h1.2L9.6,12H8.2z M6.5,7.5L5.3,4.2c0-0.1-0.1-0.2-0.2-0.4
+            C5.1,3.6,5,3.4,4.9,3.2C4.9,2.9,4.8,2.8,4.8,2.6C4.7,3,4.6,3.3,4.5,3.5S4.4,4.1,4.3,4.2L3.1,7.5H6.5z M9.6,4H11l1.7,4.6
+            c0.2,0.4,0.3,0.8,0.4,1.2c0.1,0.4,0.2,0.7,0.3,1h0.1c0.1-0.3,0.2-0.6,0.3-1c0.1-0.4,0.3-0.8,0.4-1.2L15.8,4h1.4l-3.5,9.1
+            c-0.3,0.8-0.7,1.4-1.1,1.8c-0.4,0.5-1,0.7-1.8,0.7c-0.2,0-0.4,0-0.6,0c-0.2,0-0.3-0.1-0.5-0.1v-1c0.1,0,0.2,0,0.4,0.1
+            c0.2,0,0.3,0,0.5,0c0.5,0,0.8-0.1,1.1-0.4s0.5-0.6,0.7-1l0.4-1.1L9.6,4z M19.2,0.9c0.2,0,0.4,0.1,0.5,0.2S20,1.5,20,1.8
+            s-0.1,0.5-0.2,0.6c-0.2,0.1-0.3,0.2-0.5,0.2c-0.2,0-0.4-0.1-0.6-0.2c-0.1-0.1-0.2-0.3-0.2-0.6s0.1-0.5,0.2-0.6
+            C18.8,1,19,0.9,19.2,0.9z M19.8,4v8h-1.3V4H19.8z M27.6,9.8c0,0.8-0.3,1.4-0.9,1.8c-0.6,0.4-1.4,0.6-2.3,0.6c-0.6,0-1,0-1.4-0.1
+            c-0.4-0.1-0.8-0.2-1.1-0.4v-1.2c0.3,0.2,0.7,0.3,1.2,0.4c0.5,0.1,0.9,0.2,1.4,0.2c0.7,0,1.2-0.1,1.5-0.3c0.3-0.2,0.5-0.5,0.5-0.9
+            c0-0.2-0.1-0.4-0.2-0.5S25.9,9,25.6,8.9s-0.7-0.3-1.2-0.5c-0.5-0.2-1-0.4-1.3-0.6c-0.4-0.2-0.7-0.4-0.9-0.7
+            c-0.2-0.3-0.3-0.6-0.3-1.1c0-0.7,0.3-1.2,0.8-1.6C23.3,4,24,3.8,24.9,3.8c0.5,0,0.9,0,1.4,0.2c0.4,0.1,0.8,0.2,1.2,0.4L27,5.4
+            c-0.3-0.1-0.7-0.3-1.1-0.4c-0.4-0.1-0.7-0.2-1.1-0.2c-0.5,0-1,0.1-1.2,0.3c-0.3,0.2-0.4,0.4-0.4,0.7c0,0.2,0.1,0.4,0.2,0.6
+            c0.1,0.2,0.3,0.3,0.7,0.5c0.3,0.2,0.7,0.3,1.2,0.5c0.5,0.2,0.9,0.4,1.3,0.6c0.4,0.2,0.6,0.4,0.8,0.7C27.5,9,27.6,9.3,27.6,9.8z
+            M28.3,4h1.4l1.7,4.6c0.2,0.4,0.3,0.8,0.4,1.2c0.1,0.4,0.2,0.7,0.3,1h0.1c0.1-0.3,0.2-0.6,0.3-1c0.1-0.4,0.3-0.8,0.4-1.2L34.5,4h1.4
+            l-3.5,9.1c-0.3,0.8-0.7,1.4-1.1,1.8c-0.4,0.5-1,0.7-1.8,0.7c-0.2,0-0.4,0-0.6,0s-0.3-0.1-0.5-0.1v-1c0.1,0,0.2,0,0.4,0.1
+            c0.2,0,0.3,0,0.5,0c0.5,0,0.8-0.1,1.1-0.4c0.3-0.3,0.5-0.6,0.7-1l0.4-1.1L28.3,4z M40.3,3.8c0.7,0,1.3,0.1,1.8,0.5
+            C42.6,4.6,43,5,43.2,5.5c0.3,0.5,0.4,1.2,0.4,1.9v0.8h-5.5c0,0.9,0.3,1.6,0.7,2.1c0.4,0.5,1.1,0.7,1.9,0.7c0.5,0,1,0,1.4-0.1
+            c0.4-0.1,0.8-0.2,1.2-0.4v1.2c-0.4,0.2-0.8,0.3-1.2,0.4s-0.9,0.1-1.4,0.1c-0.8,0-1.4-0.2-2-0.5c-0.6-0.3-1-0.8-1.4-1.4
+            c-0.3-0.6-0.5-1.4-0.5-2.3c0-0.9,0.1-1.6,0.4-2.3s0.7-1.1,1.2-1.5S39.6,3.8,40.3,3.8z M40.3,4.9c-0.6,0-1.1,0.2-1.5,0.6
+            s-0.6,1-0.7,1.7h4.1c0-0.7-0.2-1.2-0.5-1.7S41,4.9,40.3,4.9z M49.5,3.8c1,0,1.7,0.2,2.2,0.7c0.5,0.5,0.7,1.2,0.7,2.2V12h-1.3V6.9
+            c0-1.3-0.6-1.9-1.8-1.9c-0.9,0-1.5,0.2-1.8,0.8C47.2,6.2,47,6.9,47,7.8V12h-1.3V4h1.1l0.2,1.1H47c0.3-0.4,0.6-0.7,1.1-0.9
+            C48.6,3.9,49,3.8,49.5,3.8z M60.2,0.6v6c0,0.2,0,0.4,0,0.6c0,0.3,0,0.5,0,0.7h0.1c0.1-0.1,0.1-0.2,0.3-0.3c0.1-0.2,0.2-0.3,0.4-0.5
+            c0.1-0.2,0.2-0.3,0.3-0.4L63.7,4h1.5L62,7.4l3.5,4.6h-1.6l-2.8-3.8L60.2,9v3h-1.3V0.6H60.2z M70.6,3.8c0.1,0,0.3,0,0.5,0
+            s0.3,0,0.5,0.1l-0.2,1.2c-0.1,0-0.3-0.1-0.4-0.1c-0.2,0-0.3,0-0.4,0c-0.4,0-0.8,0.1-1.2,0.3c-0.4,0.2-0.6,0.5-0.9,0.9
+            c-0.2,0.4-0.3,0.9-0.3,1.4V12h-1.3V4h1.1l0.2,1.5h0.1c0.3-0.4,0.6-0.8,1-1.1S70,3.8,70.6,3.8z M75.9,3.8c0.7,0,1.3,0.1,1.8,0.5
+            c0.5,0.3,0.9,0.7,1.1,1.3s0.4,1.2,0.4,1.9v0.8h-5.5c0,0.9,0.3,1.6,0.7,2.1c0.4,0.5,1.1,0.7,1.9,0.7c0.5,0,1,0,1.4-0.1
+            c0.4-0.1,0.8-0.2,1.2-0.4v1.2c-0.4,0.2-0.8,0.3-1.2,0.4s-0.9,0.1-1.4,0.1c-0.8,0-1.4-0.2-2-0.5c-0.6-0.3-1-0.8-1.4-1.4
+            c-0.3-0.6-0.5-1.4-0.5-2.3c0-0.9,0.1-1.6,0.4-2.3s0.7-1.1,1.2-1.5C74.5,4,75.1,3.8,75.9,3.8z M75.8,4.9c-0.6,0-1.1,0.2-1.5,0.6
+            c-0.4,0.4-0.6,1-0.7,1.7h4.1c0-0.7-0.2-1.2-0.5-1.7C77,5.1,76.5,4.9,75.8,4.9z M88.2,8c0,1.3-0.3,2.4-1,3.1
+            c-0.7,0.7-1.6,1.1-2.7,1.1c-0.7,0-1.3-0.2-1.9-0.5c-0.6-0.3-1-0.8-1.3-1.4c-0.3-0.6-0.5-1.4-0.5-2.3c0-1.3,0.3-2.4,1-3.1
+            s1.6-1.1,2.7-1.1c0.7,0,1.4,0.2,1.9,0.5s1,0.8,1.3,1.4S88.2,7.1,88.2,8z M82.1,8c0,1,0.2,1.7,0.6,2.3c0.4,0.6,1,0.8,1.8,0.8
+            c0.8,0,1.4-0.3,1.8-0.8c0.4-0.6,0.6-1.3,0.6-2.3s-0.2-1.7-0.6-2.2s-1-0.8-1.8-0.8c-0.8,0-1.4,0.3-1.8,0.8S82.1,7,82.1,8z M91.6,12
+            h-1.3V0.6h1.3V12z"></path></svg>
+                    </span>
+                </li>
+                <li class="preferred-languages__item custom-header-font-color" data-id="hi-IN">
+                    <span class="preferred-languages__item--title custom-header-font-color">
+                      <svg class="language-selection-item__name svg-hi-IN-15" viewBox="0 0 25 16">
+                          
+                      <path d="M20.9,4.4H22c-0.1-1.7-1-3.3-2.5-3.3c-0.7,0-1.2,0.5-1.2,1.1c0,0.4,0.1,0.8,0.5,1l-1.1,0.2
+            c-0.3-0.3-0.5-0.8-0.5-1.3c0-1.1,0.9-2,2.3-2c2,0,3.4,1.7,3.6,4.2H25v1h-1.8V14H22V5.3h-1.2h-2.2v2.3l-2.4,0.6
+            c-1.3,0.3-1.8,0.9-1.8,1.7c0,1.1,0.9,2,2.1,2c0.6,0,1.1-0.2,1.3-0.4V10l0.8-0.3c0.3,0.2,0.8,0.6,0.8,1.2c0,0.6-0.3,1-0.5,1.2
+            l1.7,2.1l-1.3,0.3l-1.1-2c-0.4,0.2-0.9,0.3-1.5,0.3c-2.1,0-3.4-1.5-3.4-3.1c0-1.3,0.8-2.1,2.3-2.5l1.8-0.5V5.3H13h-1.6v2.5H8.2
+            c-0.7,0-0.9,0.3-0.9,0.7c0,0.5,0.4,1,0.9,1.2C8.6,9.6,9,9.5,9.5,9.5c1.7,0,2.5,1,2.5,2.1c0,0.7-0.3,1.2-0.7,1.6l-1-0.6
+            c0.4-0.3,0.6-0.7,0.6-1.1c0-0.6-0.4-1-1.3-1c-1.3,0-2.1,0.7-2.1,1.6c0,1.1,1,2,4.1,2.2l-0.5,1c-2.9-0.2-4.7-1.3-4.7-3.2
+            c0-0.7,0.3-1.4,1-1.8C6.7,9.8,6.2,9.2,6.2,8.3c0-0.9,0.6-1.5,1.8-1.5h2.4V5.3H4.8H3.6V14H2.5V5.3H0.7v-1h1.8V3.1
+            c0-1.8,1.4-2.9,3.6-2.9c2.7,0,4.6,1.5,5.3,2.6l-0.8,0.6c-0.8-1-2.3-2.2-4.5-2.2c-1.6,0-2.5,0.7-2.5,1.9v1.3h1.2H13H20.9z M11.9,1.6
+            c0-0.5,0.4-0.9,0.8-0.9c0.5,0,0.8,0.4,0.8,0.9c0,0.5-0.4,0.8-0.8,0.8C12.3,2.4,11.9,2.1,11.9,1.6z"></path></svg>
+                    </span>
+                </li>
+                <li class="preferred-languages__item custom-header-font-color" data-id="pl-PL">
+                    <span class="preferred-languages__item--title custom-header-font-color">
+                      <svg class="language-selection-item__name svg-pl-PL-16" viewBox="0 0 48 13">
+                          
+                      <path d="M3.3,1.3c1.4,0,2.4,0.3,3.1,0.8s1,1.3,1,2.3c0,0.6-0.1,1.1-0.4,1.7S6.2,7,5.6,7.3S4.1,7.8,3,7.8
+            H1.8V12H0.5V1.3H3.3z M3.2,2.4H1.8v4.2h1.1c1,0,1.8-0.2,2.3-0.5c0.5-0.3,0.8-0.9,0.8-1.7c0-0.7-0.2-1.2-0.7-1.5S4.1,2.4,3.2,2.4z
+            M16.3,8c0,1.3-0.3,2.4-1,3.1c-0.7,0.7-1.6,1.1-2.7,1.1c-0.7,0-1.3-0.2-1.9-0.5c-0.6-0.3-1-0.8-1.3-1.4S8.9,8.9,8.9,8
+            c0-1.3,0.3-2.4,1-3.1c0.7-0.7,1.6-1.1,2.7-1.1c0.7,0,1.4,0.2,1.9,0.5c0.6,0.3,1,0.8,1.3,1.4C16.2,6.3,16.3,7.1,16.3,8z M10.3,8
+            c0,1,0.2,1.7,0.6,2.3c0.4,0.6,1,0.8,1.8,0.8c0.8,0,1.4-0.3,1.8-0.8C14.8,9.7,15,8.9,15,8s-0.2-1.7-0.6-2.2s-1-0.8-1.8-0.8
+            c-0.8,0-1.4,0.3-1.8,0.8S10.3,7,10.3,8z M19.7,12h-1.3V0.6h1.3V12z M27.5,9.8c0,0.8-0.3,1.4-0.9,1.8c-0.6,0.4-1.4,0.6-2.3,0.6
+            c-0.6,0-1,0-1.4-0.1c-0.4-0.1-0.8-0.2-1.1-0.4v-1.2c0.3,0.2,0.7,0.3,1.2,0.4c0.5,0.1,0.9,0.2,1.4,0.2c0.7,0,1.2-0.1,1.5-0.3
+            s0.4-0.5,0.4-0.9c0-0.2-0.1-0.4-0.2-0.5S25.8,9,25.5,8.9s-0.7-0.3-1.2-0.5c-0.5-0.2-1-0.4-1.3-0.6c-0.4-0.2-0.7-0.4-0.9-0.7
+            c-0.2-0.3-0.3-0.6-0.3-1.1c0-0.7,0.3-1.2,0.8-1.6c0.6-0.4,1.3-0.6,2.2-0.6c0.5,0,0.9,0,1.4,0.2c0.4,0.1,0.8,0.2,1.2,0.4l-0.4,1.1
+            c-0.3-0.1-0.7-0.3-1.1-0.4c-0.4-0.1-0.7-0.2-1.1-0.2c-0.5,0-1,0.1-1.2,0.3C23.2,5.3,23,5.6,23,5.9c0,0.2,0.1,0.4,0.2,0.6
+            s0.3,0.3,0.7,0.5c0.3,0.2,0.7,0.3,1.2,0.5s0.9,0.4,1.3,0.6s0.6,0.4,0.8,0.7C27.4,9,27.5,9.3,27.5,9.8z M30.8,0.6v6
+            c0,0.2,0,0.4,0,0.6c0,0.3,0,0.5,0,0.7h0.1c0.1-0.1,0.1-0.2,0.3-0.3c0.1-0.2,0.2-0.3,0.4-0.5c0.1-0.2,0.2-0.3,0.3-0.4L34.3,4h1.5
+            l-3.3,3.4l3.5,4.6h-1.6l-2.8-3.8L30.8,9v3h-1.3V0.6H30.8z M38.2,0.9c0.2,0,0.4,0.1,0.5,0.2c0.2,0.1,0.2,0.3,0.2,0.6
+            s-0.1,0.5-0.2,0.6c-0.2,0.1-0.3,0.2-0.5,0.2c-0.2,0-0.4-0.1-0.6-0.2c-0.2-0.1-0.2-0.3-0.2-0.6s0.1-0.5,0.2-0.6S37.9,0.9,38.2,0.9z
+            M38.8,4v8h-1.3V4H38.8z M44.5,3.8c0.7,0,1.3,0.1,1.8,0.5c0.5,0.3,0.9,0.7,1.1,1.3c0.3,0.5,0.4,1.2,0.4,1.9v0.8h-5.5
+            c0,0.9,0.3,1.6,0.7,2.1S44,11,44.8,11c0.5,0,1,0,1.4-0.1c0.4-0.1,0.8-0.2,1.2-0.4v1.2c-0.4,0.2-0.8,0.3-1.2,0.4
+            c-0.4,0.1-0.9,0.1-1.4,0.1c-0.8,0-1.4-0.2-2-0.5c-0.6-0.3-1-0.8-1.4-1.4c-0.3-0.6-0.5-1.4-0.5-2.3c0-0.9,0.1-1.6,0.4-2.3
+            s0.7-1.1,1.2-1.5S43.8,3.8,44.5,3.8z M44.5,4.9c-0.6,0-1.1,0.2-1.5,0.6s-0.6,1-0.7,1.7h4.1c0-0.7-0.2-1.2-0.5-1.7
+            C45.6,5.1,45.1,4.9,44.5,4.9z"></path></svg>
+                    </span>
+                </li>
+                <li class="preferred-languages__item custom-header-font-color" data-id="ar-SY">
+                    <span class="preferred-languages__item--title custom-header-font-color">
+                      <svg class="language-selection-item__name svg-ar-SY-17" viewBox="0 0 29 11">
+                          
+                      <path d="M21.2,5.8c0.6,0,1.1,0,1.5,0c0.3,0,0.6,0,0.8,0c0.2,0,0.3,0,0.3,0c-0.2-0.1-0.4-0.3-0.6-0.5
+            c-0.2-0.2-0.4-0.5-0.6-0.8c-0.2-0.3-0.3-0.7-0.3-1.2c0-0.6,0.1-1.1,0.4-1.5s0.6-0.8,1.1-1s1-0.4,1.6-0.4c0.5,0,1,0.1,1.5,0.2
+            l-0.3,1.2c-0.4-0.1-0.8-0.2-1.2-0.2c-0.6,0-1,0.1-1.3,0.4c-0.3,0.3-0.5,0.7-0.5,1.2c0,0.3,0.1,0.6,0.3,0.9c0.2,0.3,0.4,0.5,0.6,0.6
+            c0.3,0.2,0.5,0.3,0.8,0.4c0.3,0.1,0.5,0.1,0.7,0.1c0.2-0.1,0.3-0.1,0.4-0.1c0.1,0,0.3-0.1,0.5-0.2c0.2-0.1,0.5-0.2,0.9-0.4l0.4,1.1
+            c-0.7,0.3-1.4,0.5-2,0.7s-1.4,0.4-2.3,0.5C23,7,22.1,7.1,21,7.1c-0.4,0-0.7-0.1-1-0.2c-0.3-0.1-0.5-0.3-0.6-0.5
+            c-0.1,0.6-0.3,1.1-0.6,1.5s-0.7,0.9-1.1,1.2c-0.4,0.3-0.9,0.6-1.3,0.8c-0.5,0.2-0.9,0.4-1.2,0.5l-0.4-1.1c1-0.3,1.7-0.7,2.3-1.1
+            c0.5-0.4,0.9-0.9,1.2-1.4c0.2-0.5,0.3-1,0.3-1.4c0-0.5-0.1-1-0.3-1.5c-0.2-0.5-0.5-1-0.7-1.4l1.1-0.6c0.3,0.5,0.5,1,0.7,1.5
+            c0.2,0.5,0.3,0.9,0.5,1.3c0.1,0.4,0.3,0.7,0.5,0.9C20.5,5.8,20.8,5.8,21.2,5.8z M11.2,5.8c0.5,0,0.9,0,1.2-0.1
+            c0.3-0.1,0.5-0.2,0.6-0.4c0.1-0.2,0.2-0.5,0.2-0.8s-0.1-0.8-0.3-1.4c-0.2-0.6-0.4-1.2-0.6-1.7L13.5,1c0.1,0.3,0.3,0.7,0.4,1.1
+            c0.1,0.4,0.2,0.8,0.3,1.2c0.1,0.4,0.1,0.7,0.1,1c0,1-0.3,1.7-0.8,2.1C13,6.9,12.2,7.1,11,7.1h-0.6c0,0.1,0,0.2,0,0.2s0,0.1,0,0.2
+            c0,0.5-0.2,1-0.7,1.4C9.4,9.4,8.8,9.8,7.9,10s-1.9,0.4-3,0.4c-0.8,0-1.5-0.1-2.2-0.4C2,9.9,1.5,9.5,1.1,9C0.7,8.4,0.4,7.8,0.4,7
+            c0-0.4,0-0.8,0.2-1.2c0.1-0.4,0.3-0.9,0.5-1.5l1.1,0.4C2,5.2,1.9,5.6,1.8,5.9s-0.1,0.7-0.1,1c0,0.6,0.2,1,0.5,1.4
+            C2.5,8.6,2.9,8.9,3.5,9s1.1,0.2,1.8,0.2C6,9.3,6.7,9.2,7.3,9C8,8.8,8.5,8.6,8.9,8.3c0.4-0.3,0.6-0.6,0.6-1c0-0.3-0.2-0.5-0.6-0.7
+            C8.4,6.4,7.9,6.2,7.1,6l0.3-1.2c1,0.4,1.8,0.7,2.4,0.8C10.4,5.8,10.9,5.8,11.2,5.8z M12.6,9.9c-0.2,0-0.4-0.1-0.5-0.2
+            s-0.2-0.3-0.2-0.5s0.1-0.4,0.2-0.5c0.1-0.2,0.3-0.2,0.5-0.2c0.2,0,0.4,0.1,0.5,0.2c0.1,0.2,0.2,0.3,0.2,0.5s-0.1,0.4-0.2,0.5
+            C13,9.8,12.8,9.9,12.6,9.9z"></path></svg>
+                    </span>
+                </li>
+                <li class="preferred-languages__item custom-header-font-color" data-id="ur-PK">
+                    <span class="preferred-languages__item--title custom-header-font-color">
+                      <svg class="language-selection-item__name svg-ur-PK-18" viewBox="0 0 22 15">
+                          
+                      <path d="M20.3,11L20,0.3h1.2L21.5,11H20.3z M13.5,14.4L13,13.3c1-0.3,1.8-0.7,2.3-1.1
+            c0.5-0.4,0.9-0.9,1.1-1.4c0.2-0.5,0.3-0.9,0.3-1.4c0-0.3,0-0.5-0.1-0.8c-0.1-0.3-0.2-0.6-0.3-0.9C16.2,7.4,16,7,15.8,6.5l1.1-0.6
+            c0.4,0.7,0.7,1.3,0.8,1.8s0.2,1.1,0.2,1.5c0,0.6-0.1,1.2-0.3,1.7c-0.2,0.5-0.5,1-0.8,1.4c-0.3,0.4-0.7,0.7-1.1,1
+            c-0.4,0.3-0.8,0.5-1.2,0.7C14.1,14.2,13.8,14.4,13.5,14.4z M7.2,10.3l0.6-1C8,9.4,8.3,9.6,8.7,9.7C9,9.8,9.4,9.8,9.9,9.8
+            c0.7,0,1.3-0.1,1.6-0.3C11.8,9.3,12,9,12,8.6c0-0.2,0-0.4-0.1-0.7c-0.1-0.3-0.3-0.7-0.5-1.2s-0.7-1.2-1.3-2L11,4
+            c0.8,1.1,1.3,2,1.7,2.8s0.5,1.4,0.5,1.9c0,0.4-0.1,0.8-0.3,1.2s-0.5,0.7-1,0.9c-0.5,0.2-1.1,0.4-1.9,0.4c-0.6,0-1.1-0.1-1.5-0.2
+            C7.9,10.8,7.5,10.6,7.2,10.3z M0.9,14.4l-0.3-1.2c0.6-0.1,1.2-0.2,1.7-0.4s1-0.4,1.3-0.7s0.6-0.7,0.8-1.2c-0.2,0.1-0.4,0.1-0.6,0.1
+            c-0.2,0-0.4,0-0.6,0c-0.8,0-1.4-0.2-1.8-0.5C1.2,10.3,1,9.9,1,9.2C1,8.8,1,8.5,1.1,8.1S1.4,7.3,1.6,7s0.5-0.6,0.8-0.8
+            c0.3-0.2,0.7-0.3,1-0.3c0.5,0,1,0.2,1.3,0.5c0.4,0.4,0.6,0.8,0.8,1.4C5.8,8.4,5.9,9,5.9,9.6c0,1.4-0.4,2.5-1.3,3.3
+            S2.5,14.3,0.9,14.4z M2.1,8.9c0,0.3,0.1,0.6,0.3,0.7c0.2,0.2,0.5,0.3,1,0.3c0.4,0,0.8-0.1,1.2-0.2c0-0.1,0-0.1,0-0.2
+            c0-0.4-0.1-0.8-0.2-1.2S4.3,7.7,4.1,7.5C3.9,7.3,3.6,7.2,3.4,7.2c-0.2,0-0.4,0.1-0.6,0.3C2.5,7.6,2.4,7.8,2.3,8.1
+            C2.2,8.4,2.1,8.6,2.1,8.9z"></path></svg>
+                    </span>
+                </li>
+                <li class="preferred-languages__item custom-header-font-color" data-id="ku-Arab-IQ">
+                    <span class="preferred-languages__item--title custom-header-font-color">
+                      <svg class="language-selection-item__name svg-ku-Arab-IQ-19" viewBox="0 0 37 15">
+                          
+                      <path d="M30.8,9.8h1.4c0.6,0,1,0,1.4-0.1c0.4-0.1,0.6-0.1,0.8-0.3s0.3-0.2,0.3-0.3s0.1-0.3,0.1-0.4
+            c0-0.2-0.1-0.5-0.3-0.9c-0.2-0.3-0.5-0.8-1.1-1.3c-0.4-0.4-0.7-0.7-1.1-1c-0.4-0.3-0.7-0.5-0.9-0.7c-0.2-0.2-0.4-0.3-0.4-0.4
+            c0-0.2,0-0.4,0.1-0.6c0.1-0.2,0.1-0.4,0.2-0.5c0.4-0.4,1-0.9,1.9-1.3c0.9-0.4,1.9-1,3.2-1.6L37,1.5c-0.9,0.4-1.7,0.8-2.2,1.1
+            c-0.6,0.3-1,0.5-1.4,0.8c-0.4,0.2-0.7,0.4-1,0.7c1.2,1,2.1,1.8,2.7,2.6C35.6,7.3,36,8.1,36,8.8c0,0.2,0,0.5-0.1,0.7
+            c-0.1,0.3-0.2,0.5-0.5,0.7s-0.6,0.4-1.2,0.6c-0.5,0.1-1.2,0.2-2.1,0.2h-1.4h-1.4c-0.5,1.9-2.1,3.1-4.8,3.4l-0.3-1.2
+            c0.6-0.1,1.2-0.2,1.7-0.4c0.5-0.2,1-0.4,1.3-0.7c0.4-0.3,0.6-0.7,0.8-1.1h-1c-0.5,0-0.9-0.1-1.3-0.2c-0.4-0.1-0.7-0.3-0.9-0.6
+            c-0.2-0.3-0.4-0.6-0.4-1.1c0-0.6,0.1-1.1,0.3-1.6s0.5-0.9,0.9-1.2c0.4-0.3,0.8-0.5,1.3-0.5c0.7,0,1.3,0.3,1.7,0.9
+            c0.5,0.6,0.7,1.5,0.7,2.8v0.2H30.8z M27.7,9.8h0.6c0-0.1,0-0.2,0-0.3c0-0.7-0.1-1.2-0.4-1.7s-0.6-0.7-1-0.7c-0.2,0-0.4,0.1-0.6,0.2
+            c-0.2,0.2-0.3,0.4-0.4,0.6c-0.1,0.3-0.2,0.6-0.2,0.9c0,0.4,0.2,0.6,0.5,0.7C26.6,9.8,27,9.8,27.7,9.8z M18.2,14.4l-0.4-1.1
+            c1-0.3,1.8-0.7,2.3-1.1s0.9-0.9,1.1-1.4s0.3-0.9,0.3-1.4c0-0.3,0-0.5-0.1-0.8c-0.1-0.3-0.2-0.6-0.3-0.9c-0.2-0.3-0.4-0.7-0.6-1.2
+            l1.1-0.6c0.4,0.7,0.7,1.3,0.8,1.8s0.2,1.1,0.2,1.5c0,0.6-0.1,1.2-0.3,1.7s-0.5,1-0.8,1.4c-0.3,0.4-0.7,0.7-1.1,1
+            c-0.4,0.3-0.8,0.5-1.2,0.7C18.8,14.2,18.5,14.4,18.2,14.4z M11.9,10.3l0.6-1c0.2,0.1,0.5,0.3,0.8,0.4c0.4,0.1,0.8,0.2,1.3,0.2
+            c0.7,0,1.3-0.1,1.6-0.3c0.3-0.2,0.5-0.5,0.5-0.9c0-0.2,0-0.4-0.1-0.7c-0.1-0.3-0.3-0.7-0.5-1.2c-0.3-0.5-0.7-1.2-1.3-2l1-0.7
+            c0.8,1.1,1.3,2,1.7,2.8s0.5,1.4,0.5,1.9c0,0.4-0.1,0.8-0.3,1.2s-0.5,0.7-1,0.9c-0.5,0.2-1.1,0.4-2,0.4c-0.6,0-1.1-0.1-1.5-0.2
+            C12.6,10.8,12.2,10.6,11.9,10.3z M0.4,11c0-0.4,0-0.8,0.2-1.2c0.1-0.4,0.3-0.9,0.5-1.5l1.1,0.4C2,9.2,1.9,9.6,1.8,9.9
+            c-0.1,0.4-0.1,0.7-0.1,1c0,0.5,0.1,0.9,0.4,1.3c0.3,0.4,0.7,0.6,1.2,0.8s1.1,0.3,1.7,0.3c0.7,0,1.3-0.1,1.9-0.2s1-0.4,1.3-0.6
+            c0.4-0.2,0.6-0.5,0.8-0.8c0.2-0.3,0.3-0.5,0.3-0.7c0-0.2-0.1-0.3-0.4-0.4c-0.2-0.1-0.5-0.2-0.9-0.4C7.7,10,7.3,9.9,7,9.7
+            S6.3,9.4,6.1,9.1C5.8,8.9,5.7,8.6,5.7,8.2C5.7,7.8,5.8,7.4,6,7c0.2-0.4,0.5-0.8,0.8-1.1C7.2,5.5,7.6,5.2,8.1,5
+            C8.5,4.8,9,4.7,9.4,4.7c0.4,0,0.8,0.1,1.1,0.2C10.8,5,11,5.1,11.2,5.2l-0.5,1.1c-0.2-0.1-0.4-0.2-0.6-0.2C9.9,6,9.7,5.9,9.4,5.9
+            C9.1,5.9,8.9,6,8.6,6.1C8.3,6.2,8,6.4,7.7,6.6C7.5,6.8,7.3,7,7.2,7.3C7,7.5,6.9,7.7,6.9,8c0,0.2,0.1,0.3,0.3,0.5
+            c0.2,0.1,0.4,0.3,0.7,0.4C8.2,9,8.5,9.1,8.8,9.2c0.3,0.1,0.6,0.3,0.9,0.4s0.5,0.3,0.7,0.5c0.2,0.2,0.3,0.4,0.3,0.7
+            c0,0.4-0.1,0.8-0.4,1.2c-0.3,0.4-0.6,0.8-1.1,1.2S8,13.9,7.3,14.1c-0.7,0.2-1.5,0.4-2.4,0.4c-0.8,0-1.6-0.1-2.3-0.4
+            C2,13.9,1.4,13.5,1,13C0.6,12.5,0.4,11.8,0.4,11z"></path></svg>
+                    </span>
+                </li>
+                <li class="preferred-languages__item custom-header-font-color" data-id="fa-IR">
+                    <span class="preferred-languages__item--title custom-header-font-color">
+                      <svg class="language-selection-item__name svg-fa-IR-20" viewBox="0 0 39 15">
+                          
+                      <path d="M21.5,6.2c-0.1-0.4-0.2-0.8-0.4-1.1L20,5.6c0.2,0.6,0.4,1.1,0.6,1.7c0.2,0.6,0.3,1,0.3,1.4
+            c0,0.5-0.1,0.8-0.4,1c-0.3,0.2-0.6,0.2-1,0.2c-0.4,0-0.7,0-0.9-0.1s-0.3-0.2-0.4-0.3c-0.1-0.1-0.1-0.3-0.1-0.4c0-0.2,0-0.4,0-0.6
+            c0-0.2,0.1-0.5,0.1-0.8c0-0.3,0.1-0.5,0.1-0.6l-1.1-0.2c-0.1,0.7-0.2,1.3-0.3,1.7c-0.1,0.4-0.2,0.7-0.3,0.9
+            c-0.1,0.2-0.3,0.3-0.5,0.4s-0.4,0.1-0.7,0.1c-0.5,0-0.8-0.1-1-0.2c-0.2-0.1-0.3-0.3-0.3-0.6c0-0.3,0-0.6,0.1-0.9
+            c0.1-0.3,0.1-0.6,0.2-0.9L13.3,7c-0.2,0.7-0.3,1.3-0.4,1.6c-0.1,0.4-0.2,0.7-0.4,0.9c-0.1,0.2-0.3,0.3-0.5,0.3
+            c-0.2,0-0.5,0.1-0.8,0.1c-0.3,0-0.7-0.1-1.3-0.2S8.6,9.3,7.6,8.9l-0.3,1.2C8,10.3,8.6,10.5,9,10.7c0.4,0.2,0.6,0.4,0.6,0.7
+            c0,0.4-0.2,0.7-0.6,1c-0.4,0.3-0.9,0.5-1.5,0.7c-0.6,0.2-1.3,0.3-2.1,0.3c-0.6,0-1.2-0.1-1.7-0.2c-0.5-0.2-0.9-0.4-1.3-0.7
+            S2,11.5,2,11c0-0.3,0-0.6,0.1-1c0.1-0.3,0.2-0.7,0.4-1.1L1.4,8.5C1.2,9,1,9.4,0.9,9.9c-0.1,0.4-0.1,0.8-0.1,1.2
+            c0,0.8,0.2,1.4,0.6,1.9c0.4,0.5,0.9,0.9,1.6,1.1c0.7,0.2,1.4,0.4,2.2,0.4c1.2,0,2.1-0.1,3-0.4c0.8-0.3,1.5-0.6,1.9-1.1
+            c0.4-0.4,0.7-0.9,0.7-1.4c0-0.1,0-0.2,0-0.2s0-0.1,0-0.2h0.5c0.5,0,1-0.1,1.4-0.2c0.4-0.1,0.7-0.4,0.9-0.8c0.1,0.3,0.3,0.5,0.5,0.6
+            c0.2,0.1,0.4,0.2,0.6,0.3s0.4,0.1,0.7,0.1c0.6,0,1.1-0.1,1.4-0.2c0.3-0.1,0.6-0.3,0.8-0.7c0.1,0.3,0.4,0.5,0.7,0.7
+            c0.3,0.1,0.7,0.2,1.3,0.2c0.8,0,1.4-0.2,1.9-0.7c0.5-0.4,0.7-1.1,0.7-2c0-0.3,0-0.6-0.1-1C21.7,7,21.6,6.6,21.5,6.2z"></path><path d="M26,6.1L25,6.6c0.3,0.5,0.5,0.9,0.6,1.2c0.1,0.3,0.2,0.6,0.3,0.9C25.9,8.9,26,9.2,26,9.5
+            c0,0.4-0.1,0.9-0.3,1.4c-0.2,0.5-0.6,0.9-1.1,1.4c-0.5,0.4-1.3,0.8-2.3,1.1l0.4,1.1c0.3-0.1,0.6-0.2,1-0.4c0.4-0.2,0.8-0.4,1.2-0.7
+            s0.7-0.6,1.1-1s0.6-0.8,0.8-1.3c0.2-0.5,0.3-1.1,0.3-1.7c0-0.4-0.1-0.9-0.2-1.5C26.7,7.3,26.4,6.7,26,6.1z"></path><path d="M35.6,2.2c0.2,0,0.4-0.1,0.5-0.2c0.1-0.1,0.2-0.3,0.2-0.5c0-0.2-0.1-0.4-0.2-0.5c-0.1-0.1-0.3-0.2-0.5-0.2
+            c-0.2,0-0.4,0.1-0.5,0.2c-0.1,0.1-0.2,0.3-0.2,0.5c0,0.2,0.1,0.4,0.2,0.5C35.2,2.1,35.4,2.2,35.6,2.2z"></path><path d="M38,5.5c-0.2-0.5-0.4-1-0.8-1.3s-0.8-0.5-1.3-0.5c-0.4,0-0.7,0.1-1,0.3c-0.3,0.2-0.6,0.4-0.8,0.8
+            c-0.2,0.3-0.4,0.7-0.5,1c-0.1,0.4-0.2,0.8-0.2,1.1c0,0.5,0.2,1,0.6,1.3s1,0.5,1.7,0.5c0.2,0,0.4,0,0.6,0c0.2,0,0.4-0.1,0.6-0.1
+            c-0.1,0.3-0.2,0.5-0.4,0.7c-0.2,0.2-0.4,0.3-0.8,0.4c-0.2,0.1-0.5,0.1-0.9,0.2c-0.4,0-0.8,0.1-1.2,0.1c-0.4,0-0.8,0-1.1,0
+            c-0.6,0-1,0-1.2-0.1c-0.3-0.1-0.4-0.3-0.5-0.5c-0.1-0.3-0.1-0.6-0.1-1.1l-0.3-7.6h-1.2l0.3,8c0,0.6,0.1,1.1,0.3,1.4
+            s0.4,0.6,0.9,0.8c0.4,0.2,1,0.3,1.8,0.3c0.6,0,1.1,0,1.7,0c0.5,0,1-0.1,1.5-0.2s0.8-0.2,1.1-0.4c0.6-0.3,1-0.8,1.2-1.3
+            c0.2-0.5,0.4-1.2,0.4-1.9C38.2,6.7,38.1,6.1,38,5.5z M37.1,7.4c-0.4,0.1-0.8,0.2-1.2,0.2c-0.5,0-0.8-0.1-1-0.3
+            c-0.2-0.2-0.3-0.4-0.3-0.7c0-0.3,0.1-0.5,0.2-0.8c0.1-0.3,0.2-0.5,0.4-0.7c0.2-0.2,0.4-0.3,0.6-0.3c0.3,0,0.5,0.1,0.7,0.3
+            c0.2,0.2,0.3,0.5,0.5,0.9c0.1,0.4,0.2,0.7,0.2,1.1C37.1,7.3,37.1,7.4,37.1,7.4z"></path></svg>
+                    </span>
+                </li>
+                <li class="preferred-languages__item custom-header-font-color" data-id="uk-UA">
+                    <span class="preferred-languages__item--title custom-header-font-color">
+                      <svg class="language-selection-item__name svg-uk-UA-21" viewBox="0 0 84.3 16">
+                          
+                      <path d="M11.5,1.5L8.1,9.1c-0.3,0.7-0.6,1.3-1,1.8C6.8,11.4,6.4,11.7,6,12c-0.4,0.2-1,0.4-1.7,0.4c-0.3,0-0.5,0-0.8-0.1
+            s-0.5-0.1-0.7-0.2v-1.3c0.2,0.1,0.4,0.2,0.6,0.2s0.5,0.1,0.7,0.1c0.5,0,1-0.1,1.3-0.4c0.3-0.2,0.6-0.7,0.9-1.3l-4.1-8h1.5l3,5.9
+            C6.9,7.5,6.9,7.6,7,7.7C7.1,7.9,7.1,8,7.2,8.2h0.1c0-0.1,0.1-0.2,0.1-0.4c0.1-0.2,0.1-0.3,0.2-0.4l2.6-5.9H11.5z"></path><path d="M17.6,4.1H19L15.6,8l3.7,4.2h-1.5l-3.6-4.1v4.1h-1.3v-8h1.3V8L17.6,4.1z"></path><path d="M24.6,4c1,0,1.8,0.3,2.4,1c0.6,0.7,0.9,1.7,0.9,3.1c0,1.4-0.3,2.4-0.9,3.1s-1.4,1.1-2.4,1.1
+            c-0.6,0-1.1-0.1-1.5-0.3c-0.4-0.2-0.7-0.5-1-0.8H22c0,0.2,0,0.4,0.1,0.6c0,0.3,0,0.5,0,0.7v3.3h-1.3V4.1h1.1L22,5.2h0.1
+            c0.2-0.3,0.6-0.6,0.9-0.9S23.9,4,24.6,4z M24.3,5.1c-0.8,0-1.4,0.2-1.7,0.7c-0.3,0.5-0.5,1.2-0.5,2.1v0.3c0,1,0.2,1.8,0.5,2.3
+            c0.3,0.5,0.9,0.8,1.8,0.8c0.5,0,0.9-0.1,1.2-0.4c0.3-0.3,0.6-0.6,0.7-1.1c0.2-0.5,0.2-1,0.2-1.6c0-0.9-0.2-1.7-0.5-2.2
+            C25.6,5.4,25.1,5.1,24.3,5.1z"></path><path d="M33,4c1,0,1.7,0.2,2.2,0.6c0.5,0.4,0.7,1.1,0.7,2.1v5.5h-1L34.7,11h-0.1c-0.4,0.4-0.7,0.8-1.1,1
+            c-0.4,0.2-0.9,0.3-1.6,0.3c-0.7,0-1.3-0.2-1.8-0.6c-0.5-0.4-0.7-1-0.7-1.8c0-0.8,0.3-1.4,0.9-1.9c0.6-0.4,1.6-0.7,2.9-0.7l1.4,0V6.8
+            c0-0.7-0.1-1.1-0.4-1.4s-0.7-0.4-1.2-0.4c-0.4,0-0.8,0.1-1.2,0.2c-0.4,0.1-0.7,0.3-1.1,0.4l-0.4-1c0.3-0.2,0.8-0.4,1.2-0.5
+            C32,4.1,32.5,4,33,4z M34.6,8.2l-1.2,0c-1,0-1.7,0.2-2.1,0.5c-0.4,0.3-0.6,0.7-0.6,1.2c0,0.5,0.1,0.8,0.4,1c0.3,0.2,0.6,0.3,1.1,0.3
+            c0.7,0,1.2-0.2,1.7-0.6s0.7-1,0.7-1.7V8.2z"></path><path d="M36.9,2c0-0.3,0.1-0.4,0.2-0.6s0.3-0.2,0.5-0.2c0.2,0,0.4,0.1,0.5,0.2c0.1,0.1,0.2,0.3,0.2,0.6
+            c0,0.3-0.1,0.4-0.2,0.6c-0.1,0.1-0.3,0.2-0.5,0.2c-0.2,0-0.4-0.1-0.5-0.2S36.9,2.2,36.9,2z M39.7,12.2h-1.3v-8h1.3V12.2z M39.7,2
+            c0-0.3,0.1-0.4,0.2-0.6c0.1-0.1,0.3-0.2,0.5-0.2c0.2,0,0.4,0.1,0.5,0.2c0.1,0.1,0.2,0.3,0.2,0.6c0,0.3-0.1,0.4-0.2,0.6
+            c-0.1,0.1-0.3,0.2-0.5,0.2c-0.2,0-0.4-0.1-0.5-0.2C39.8,2.4,39.7,2.2,39.7,2z"></path><path d="M43.6,4.1v3.3h4.4V4.1h1.3v8h-1.3V8.6h-4.4v3.6h-1.3v-8H43.6z"></path><path d="M55,12.3c-0.7,0-1.4-0.1-1.9-0.4s-1-0.7-1.3-1.3c-0.3-0.6-0.5-1.4-0.5-2.3c0-1,0.2-1.8,0.5-2.4
+            c0.3-0.6,0.8-1.1,1.3-1.4C53.8,4.1,54.4,4,55.1,4c0.4,0,0.8,0,1.2,0.1c0.4,0.1,0.7,0.2,0.9,0.3l-0.4,1.1c-0.2-0.1-0.5-0.2-0.8-0.3
+            c-0.3-0.1-0.6-0.1-0.9-0.1c-1.6,0-2.4,1-2.4,3c0,1,0.2,1.7,0.6,2.2c0.4,0.5,1,0.8,1.7,0.8c0.4,0,0.8,0,1.2-0.1s0.7-0.2,0.9-0.3v1.2
+            c-0.3,0.1-0.6,0.2-0.9,0.3C55.9,12.3,55.5,12.3,55,12.3z"></path><path d="M60.3,7.4h2.4c2.1,0,3.1,0.8,3.1,2.3c0,0.8-0.3,1.3-0.8,1.8c-0.5,0.4-1.3,0.7-2.4,0.7H59v-8h1.3V7.4z M64.5,9.8
+            c0-0.5-0.2-0.8-0.5-1c-0.3-0.2-0.8-0.3-1.4-0.3h-2.2v2.6h2.3c0.6,0,1-0.1,1.4-0.3C64.3,10.6,64.5,10.3,64.5,9.8z"></path><path d="M72.7,4.1h1.4L70.7,8l3.7,4.2h-1.5l-3.6-4.1v4.1h-1.3v-8h1.3V8L72.7,4.1z"></path><path d="M78.9,4c1,0,1.7,0.2,2.2,0.6c0.5,0.4,0.7,1.1,0.7,2.1v5.5h-1L80.6,11h-0.1c-0.3,0.4-0.7,0.8-1.1,1
+            c-0.4,0.2-0.9,0.3-1.6,0.3c-0.7,0-1.3-0.2-1.8-0.6c-0.5-0.4-0.7-1-0.7-1.8c0-0.8,0.3-1.4,0.9-1.9c0.6-0.4,1.6-0.7,2.9-0.7l1.4,0V6.8
+            c0-0.7-0.1-1.1-0.4-1.4s-0.7-0.4-1.2-0.4c-0.4,0-0.8,0.1-1.2,0.2c-0.4,0.1-0.7,0.3-1.1,0.4l-0.4-1c0.3-0.2,0.8-0.4,1.2-0.5
+            C77.9,4.1,78.4,4,78.9,4z M80.5,8.2l-1.2,0c-1,0-1.7,0.2-2.1,0.5c-0.4,0.3-0.6,0.7-0.6,1.2c0,0.5,0.1,0.8,0.4,1
+            c0.3,0.2,0.6,0.3,1.1,0.3c0.7,0,1.2-0.2,1.7-0.6s0.7-1,0.7-1.7V8.2z"></path></svg>
+                    </span>
+                </li>
+        </ul>
+          </div>
+        </section>
+      </div>
+      <section class="screen-section text-centered background-lightgrey welcome-page__content custom-body-bg-color" data-id="welcome-page-content">
+        <div class="welcome-page__content--inner">
+          <header class="stages-header" data-id="welcome-page-content-header">Here&#39;s what we need to do today:</header>
+          <ul class="stages" data-id="welcome-page-content-stages">
+
+
+            <li class="current">
+              <div class="progress">
+                <div class="circle-smallest custom-highlight-color"></div>
+                <div class="line"></div>
+              </div>
+
+              <p class="stage-title">
+                Verify who you are
+              </p>
+            </li>
+
+            <li class="">
+              <div class="progress">
+                <div class="circle-smallest custom-highlight-color"></div>
+                <div class="line"></div>
+              </div>
+
+              <p class="stage-title">
+                Review your information
+              </p>
+            </li>
+
+            <li class="">
+              <div class="progress">
+                <div class="circle-smallest custom-highlight-color"></div>
+                <div class="line"></div>
+              </div>
+
+              <p class="stage-title">
+                Store a card on file
+              </p>
+            </li>
+
+            <li class="">
+              <div class="progress">
+                <div class="circle-smallest custom-highlight-color"></div>
+                <div class="line"></div>
+              </div>
+
+              <p class="stage-title">
+                Make a payment
+              </p>
+            </li>
+
+            <li class="">
+              <div class="progress">
+                <div class="circle-smallest custom-highlight-color"></div>
+                <div class="line"></div>
+              </div>
+
+              <p class="stage-title">
+                Sign consent forms
+              </p>
+            </li>
+          </ul>
+
+          <form id="patientWelcome" method="post" novalidate class="welcome-page-form">
+            <input class="button button-orange welcome-page-button custom-primary-action-button" onclick="window.location.href='DOB-Verification.html'" data-id="welcome-page-content-button"
+              type="button" value="Get Started" />
+          </form>
+        </div>
+      </section>
+    </div>
+    <section class="screen-section phreesia-footer" data-id="phreesia-footer">
+      <div class="phreesia-footer__info" data-id="phreesia-footer-link">
+          <a class='phreesia-footer__link' href='https://patient.phreesia.com/privacy.html' target='_blank'>Privacy Policy</a>
+      </div>
+      <div class="phreesia-footer__logo" data-id="phreesia-footer-logo-wrapper">
+          <div class="phreesia-logo" data-id="phreesia-footer-logo"></div>
+      </div>
+  </section>
+  </div>
+</div>
+
+<div class="fixed-overlay">
+    <div class="modal sm">
+        <div class="modal-window custom-body-font-color">
+            <div class="modal-window__title">
+                <span class="modal-window__title--inner">Your appointment is now confirmed, Elliot.</span>
+                <svg class="icon-calendar">
+                  <use xlink:href="#icon-calendar"></use>
+                </svg>
+            </div>
+            <div class="modal-window__text">
+                Save time at the office by pre-registering for your appointment right now. Begin your process below!
+            </div>
+            <div class="modal-window__buttons">
+                <span class="button kiosk-lock-button-cancel custom-primary-action-button">Check-in online</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" style="position:absolute;width:0;height:0">
+  <defs>
+    <symbol id="toggle-locale-icon" viewBox="0 0 20.23 20.23">
+      <path d="M10.11,0a10.11,10.11,0,0,0,0,20.23h0A10.11,10.11,0,0,0,10.11,0Zm-9,10.67H4.79a17.93,17.93,0,0,0,.47,3.66H2.19A8.89,8.89,0,0,1,1.15,10.67Zm9.52-5.9V1.21c1.13.34,2.13,1.68,2.81,3.56ZM13.82,5.9a16.2,16.2,0,0,1,.49,3.66H10.67V5.9ZM9.56,1.21V4.77H6.75C7.41,2.87,8.43,1.55,9.56,1.21Zm0,4.68V9.56H5.92A17.7,17.7,0,0,1,6.41,5.9ZM4.79,9.56H1.15a9.21,9.21,0,0,1,1-3.66H5.24A17.77,17.77,0,0,0,4.79,9.56Zm1.13,1.11H9.56v3.66H6.41A16.2,16.2,0,0,1,5.92,10.67Zm3.64,4.79V19c-1.13-.34-2.13-1.68-2.81-3.56ZM10.67,19V15.46h2.81C12.82,17.35,11.8,18.67,10.67,19Zm0-4.68V10.67h3.64a17.7,17.7,0,0,1-.49,3.66Zm4.77-3.66h3.64a9.21,9.21,0,0,1-1,3.66H15A17.77,17.77,0,0,0,15.44,10.67Zm0-1.11A17.93,17.93,0,0,0,15,5.9H18a8.56,8.56,0,0,1,1,3.66Zm1.89-4.79H14.67a9.52,9.52,0,0,0-1.62-3.15A8.94,8.94,0,0,1,17.33,4.77ZM7.17,1.62A9.74,9.74,0,0,0,5.56,4.77H2.9A8.94,8.94,0,0,1,7.17,1.62ZM2.9,15.46H5.56a9.52,9.52,0,0,0,1.62,3.15A8.94,8.94,0,0,1,2.9,15.46Zm10.16,3.15a9.74,9.74,0,0,0,1.62-3.15h2.66A8.94,8.94,0,0,1,13.05,18.61Z"
+      />
+    </symbol>
+    <symbol viewBox="0 0 10 10" id="icon-close-thin">
+      <path d="M9.66063736,1.96954253 L6.63108839,4.99941183 L9.66063736,8.0291344 C9.95289367,8.32036141 10.0673758,8.7454946 9.96088117,9.14409989 C9.85438655,9.54270519 9.5431293,9.85409386 9.1445697,9.96075602 C8.7460101,10.0674182 8.32082993,9.95311424 8.02948097,9.66097948 L4.99927658,6.63091453 L1.96929719,9.66095014 C1.5186767,10.1114069 0.788210118,10.1112733 0.337754413,9.66065176 C-0.112701292,9.21003019 -0.112567715,8.47956185 0.338052766,8.02910505 L3.36751369,4.99938248 L0.337886464,1.96954253 C-0.110881296,1.51877943 -0.110122429,0.789827607 0.33958288,0.339999855 C0.789288189,-0.109827896 1.51823802,-0.110783456 1.96912111,0.337863741 L4.99924724,3.36773304 L8.02913859,0.337863741 C8.47972396,-0.112663274 9.21021901,-0.112615088 9.66074495,0.337971365 C10.1112709,0.788557819 10.1112227,1.51905462 9.66063736,1.96958166 L9.66063736,1.96954253 Z"
+      />
+    </symbol>
+    <symbol viewBox="0 0 15 11" id="icon-language-check">
+      <path d="M5.3,10.6c-0.3,0-0.5-0.1-0.7-0.3L0.8,6.5c-0.4-0.4-0.4-1,0-1.4c0.4-0.4,1-0.4,1.4,0l3.1,3.1l7.4-7.4 c0.4-0.4,1-0.4,1.4,0c0.4,0.4,0.4,1,0,1.4L6,10.3C5.8,10.5,5.6,10.6,5.3,10.6"
+      />
+    </symbol>
+    <symbol viewBox="0 0 54 54" id="icon-calendar">
+
+        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g id="Desktop_Default" transform="translate(-833.000000, -241.000000)" fill="#F3663B">
+                <g id="appointment" transform="translate(833.000000, 241.000000)">
+                    <g id="Shape">
+                        <path d="M48.7265625,4.640625 L43.6991836,4.640625 L43.6991836,3.1640625 C43.6991836,1.41939844 42.2797852,0 40.5351211,0 C38.790457,0 37.3710586,1.41939844 37.3710586,3.1640625 L37.3710586,4.640625 L19.6523086,4.640625 L19.6523086,3.1640625 C19.6523086,1.41939844 18.2329102,0 16.4882461,0 C14.743582,0 13.3241836,1.41939844 13.3241836,3.1640625 L13.3241836,4.67964844 C13.2345352,4.65486328 13.1405625,4.640625 13.0430039,4.640625 L8.84070703,4.640625 C5.93293359,4.640625 3.56726953,7.00628906 3.56726953,9.9140625 L3.56726953,27.8788711 C3.56726953,28.461375 4.03955859,28.9335586 4.62195703,28.9335586 C5.20435547,28.9335586 5.67664453,28.461375 5.67664453,27.8788711 L5.67664453,15.5039062 L43.6991836,15.5039062 C44.281582,15.5039062 44.7538711,15.0317227 44.7538711,14.4492187 C44.7538711,13.8667148 44.281582,13.3945312 43.6991836,13.3945312 L5.67664453,13.3945312 L5.67664453,9.9140625 C5.67664453,8.16939844 7.09604297,6.75 8.84070703,6.75 L13.0430039,6.75 C13.1405625,6.75 13.2345352,6.73565625 13.3241836,6.71097656 L13.3241836,8.06835937 C13.3241836,9.81302344 14.743582,11.2324219 16.4882461,11.2324219 C18.2329102,11.2324219 19.6523086,9.81302344 19.6523086,8.06835937 L19.6523086,6.75 L37.3710586,6.75 L37.3710586,8.06835937 C37.3710586,9.81302344 38.790457,11.2324219 40.5351211,11.2324219 C42.2797852,11.2324219 43.6991836,9.81302344 43.6991836,8.06835937 L43.6991836,6.75 L48.7265625,6.75 C50.4712266,6.75 51.890625,8.16939844 51.890625,9.9140625 L51.890625,49.9915547 C51.890625,51.0386484 51.0387539,51.890625 49.9915547,51.890625 C48.9443555,51.890625 48.0924844,51.0386484 48.0924844,49.9915547 L48.0924844,47.2631836 C48.0924844,46.6806797 47.6201953,46.2084961 47.0377969,46.2084961 L34.7695664,46.2084961 C34.187168,46.2084961 33.7148789,46.6806797 33.7148789,47.2631836 C33.7148789,47.8456875 34.187168,48.3178711 34.7695664,48.3178711 L45.9831094,48.3178711 L45.9831094,49.9915547 C45.9831094,50.6782617 46.1569219,51.3249961 46.4624648,51.890625 L4.0078125,51.890625 C2.96103516,51.890625 2.109375,51.0389648 2.109375,49.9921875 L2.109375,48.3178711 L25.715918,48.3178711 C26.2983164,48.3178711 26.7706055,47.8456875 26.7706055,47.2631836 C26.7706055,46.6806797 26.2983164,46.2084961 25.715918,46.2084961 L15.1779023,46.2084961 C17.0208633,44.6212969 18.1911445,42.2735625 18.1911445,39.65625 C18.1911445,34.8874805 14.3114766,31.0078125 9.54270703,31.0078125 C4.7739375,31.0078125 0.894269531,34.8874805 0.894269531,39.65625 C0.894269531,42.2735625 2.06455078,44.6212969 3.90751172,46.2084961 L1.0546875,46.2084961 C0.472289062,46.2084961 0,46.6806797 0,47.2631836 L0,49.9921875 C0,52.2020742 1.79792578,54 4.0078125,54 L49.9915547,54 C52.2017578,54 54,52.2018633 54,49.9915547 L54,9.9140625 C54,7.00628906 51.6343359,4.640625 48.7265625,4.640625 Z M17.5429336,8.06835938 C17.5429336,8.64991406 17.0698008,9.12304688 16.4882461,9.12304688 C15.9066914,9.12304688 15.4335586,8.64991406 15.4335586,8.06835938 L15.4335586,3.1640625 C15.4335586,2.58250781 15.9066914,2.109375 16.4882461,2.109375 C17.0698008,2.109375 17.5429336,2.58250781 17.5429336,3.1640625 L17.5429336,8.06835938 Z M41.5898086,8.06835938 C41.5898086,8.64991406 41.1166758,9.12304688 40.5351211,9.12304688 C39.9535664,9.12304688 39.4804336,8.64991406 39.4804336,8.06835938 L39.4804336,3.1640625 C39.4804336,2.58250781 39.9535664,2.109375 40.5351211,2.109375 C41.1166758,2.109375 41.5898086,2.58250781 41.5898086,3.1640625 L41.5898086,8.06835938 Z M3.00364453,39.65625 C3.00364453,36.0505898 5.93704687,33.1171875 9.54270703,33.1171875 C13.1483672,33.1171875 16.0817695,36.0505898 16.0817695,39.65625 C16.0817695,43.2619102 13.1483672,46.1953125 9.54270703,46.1953125 C5.93704687,46.1953125 3.00364453,43.2619102 3.00364453,39.65625 Z" fill-rule="nonzero"></path>
+                        <path d="M49.6627463,13.5566341 C49.4179024,13.3116585 49.0780976,13.1707317 48.7317073,13.1707317 C48.3851854,13.1707317 48.0455122,13.3116585 47.8005366,13.5566341 C47.555561,13.8016098 47.4146341,14.1414146 47.4146341,14.4878049 C47.4146341,14.8341951 47.5554293,15.174 47.8005366,15.4189756 C48.0456439,15.6639512 48.3851854,15.804878 48.7317073,15.804878 C49.0780976,15.804878 49.4179024,15.6639512 49.6627463,15.4189756 C49.907722,15.174 50.0487805,14.8341951 50.0487805,14.4878049 C50.0487805,14.1414146 49.9078537,13.8016098 49.6627463,13.5566341 Z" fill-rule="nonzero"></path>
+                        <path d="M32.5407951,46.4823387 C32.2959512,46.2372406 31.9561463,46.097561 31.6097561,46.097561 C31.2633659,46.097561 30.923561,46.2372406 30.6785854,46.4823387 C30.4336098,46.7287546 30.2926829,47.0674118 30.2926829,47.4139753 C30.2926829,47.7618565 30.433478,48.1005137 30.6785854,48.3469296 C30.923561,48.5920277 31.2633659,48.7317073 31.6097561,48.7317073 C31.9561463,48.7317073 32.2959512,48.5920277 32.5407951,48.3469296 C32.7857707,48.1005137 32.9268293,47.7605388 32.9268293,47.4139753 C32.9268293,47.0674118 32.7859024,46.7287546 32.5407951,46.4823387 Z" fill-rule="nonzero"></path>
+                        <path d="M23.7073171,31.6097561 C21.5286354,31.6097561 19.7560976,33.382294 19.7560976,35.5609756 C19.7560976,37.7396573 21.5286354,39.5121951 23.7073171,39.5121951 C25.8859987,39.5121951 27.6585366,37.7396573 27.6585366,35.5609756 C27.6585366,33.382294 25.8859987,31.6097561 23.7073171,31.6097561 Z M23.7073171,37.4326059 C22.6753209,37.4326059 21.8356868,36.5929718 21.8356868,35.5609756 C21.8356868,34.5289795 22.6753209,33.6893453 23.7073171,33.6893453 C24.7393132,33.6893453 25.5789474,34.5289795 25.5789474,35.5609756 C25.5789474,36.5929718 24.7393132,37.4326059 23.7073171,37.4326059 Z" fill-rule="nonzero"></path>
+                        <path d="M34.2439024,31.6097561 C32.0652208,31.6097561 30.2926829,33.382294 30.2926829,35.5609756 C30.2926829,37.7396573 32.0652208,39.5121951 34.2439024,39.5121951 C36.4225841,39.5121951 38.195122,37.7396573 38.195122,35.5609756 C38.195122,33.382294 36.4225841,31.6097561 34.2439024,31.6097561 Z M34.2439024,37.4326059 C33.2119063,37.4326059 32.3722721,36.5929718 32.3722721,35.5609756 C32.3722721,34.5289795 33.2119063,33.6893453 34.2439024,33.6893453 C35.2758986,33.6893453 36.1155327,34.5289795 36.1155327,35.5609756 C36.1155327,36.5929718 35.2758986,37.4326059 34.2439024,37.4326059 Z" fill-rule="nonzero"></path>
+                        <path d="M43.4634146,31.6097561 C41.284733,31.6097561 39.5121951,33.382294 39.5121951,35.5609756 C39.5121951,37.7396573 41.284733,39.5121951 43.4634146,39.5121951 C45.6420963,39.5121951 47.4146341,37.7396573 47.4146341,35.5609756 C47.4146341,33.382294 45.6420963,31.6097561 43.4634146,31.6097561 Z M43.4634146,37.4326059 C42.4314185,37.4326059 41.5917843,36.5929718 41.5917843,35.5609756 C41.5917843,34.5289795 42.4314185,33.6893453 43.4634146,33.6893453 C44.4954108,33.6893453 45.3350449,34.5289795 45.3350449,35.5609756 C45.3350449,36.5929718 44.4954108,37.4326059 43.4634146,37.4326059 Z" fill-rule="nonzero"></path>
+                        <path d="M14.4878049,21.0731707 C12.3091232,21.0731707 10.5365854,22.8457086 10.5365854,25.0243902 C10.5365854,27.2030719 12.3091232,28.9756098 14.4878049,28.9756098 C16.6664865,28.9756098 18.4390244,27.2030719 18.4390244,25.0243902 C18.4390244,22.8457086 16.6664865,21.0731707 14.4878049,21.0731707 Z M14.4878049,26.8960205 C13.4558087,26.8960205 12.6161746,26.0563864 12.6161746,25.0243902 C12.6161746,23.9923941 13.4558087,23.1527599 14.4878049,23.1527599 C15.519801,23.1527599 16.3594352,23.9923941 16.3594352,25.0243902 C16.3594352,26.0563864 15.519801,26.8960205 14.4878049,26.8960205 Z" fill-rule="nonzero"></path>
+                        <path d="M34.2439024,21.0731707 C32.0652208,21.0731707 30.2926829,22.8457086 30.2926829,25.0243902 C30.2926829,27.2030719 32.0652208,28.9756098 34.2439024,28.9756098 C36.4225841,28.9756098 38.195122,27.2030719 38.195122,25.0243902 C38.195122,22.8457086 36.4225841,21.0731707 34.2439024,21.0731707 Z M34.2439024,26.8960205 C33.2119063,26.8960205 32.3722721,26.0563864 32.3722721,25.0243902 C32.3722721,23.9923941 33.2119063,23.1527599 34.2439024,23.1527599 C35.2758986,23.1527599 36.1155327,23.9923941 36.1155327,25.0243902 C36.1155327,26.0563864 35.2758986,26.8960205 34.2439024,26.8960205 Z" fill-rule="nonzero"></path>
+                        <path d="M43.4634146,21.0731707 C41.284733,21.0731707 39.5121951,22.8457086 39.5121951,25.0243902 C39.5121951,27.2030719 41.284733,28.9756098 43.4634146,28.9756098 C45.6420963,28.9756098 47.4146341,27.2030719 47.4146341,25.0243902 C47.4146341,22.8457086 45.6420963,21.0731707 43.4634146,21.0731707 Z M43.4634146,26.8960205 C42.4314185,26.8960205 41.5917843,26.0563864 41.5917843,25.0243902 C41.5917843,23.9923941 42.4314185,23.1527599 43.4634146,23.1527599 C44.4954108,23.1527599 45.3350449,23.9923941 45.3350449,25.0243902 C45.3350449,26.0563864 44.4954108,26.8960205 43.4634146,26.8960205 Z" fill-rule="nonzero"></path>
+                        <path d="M23.7073171,21.0731707 C21.5286354,21.0731707 19.7560976,22.8457086 19.7560976,25.0243902 C19.7560976,27.2030719 21.5286354,28.9756098 23.7073171,28.9756098 C25.8859987,28.9756098 27.6585366,27.2030719 27.6585366,25.0243902 C27.6585366,22.8457086 25.8859987,21.0731707 23.7073171,21.0731707 Z M23.7073171,26.8960205 C22.6753209,26.8960205 21.8356868,26.0563864 21.8356868,25.0243902 C21.8356868,23.9923941 22.6753209,23.1527599 23.7073171,23.1527599 C24.7393132,23.1527599 25.5789474,23.9923941 25.5789474,25.0243902 C25.5789474,26.0563864 24.7393132,26.8960205 23.7073171,26.8960205 Z" fill-rule="nonzero"></path>
+                        <path d="M12.8733947,37.2014495 C12.4768438,36.7702485 11.8341999,36.7702485 11.4375474,37.2014495 L8.13133228,40.797588 L7.00147695,39.5686929 C6.60492605,39.137492 5.96228213,39.137492 5.56562971,39.5686929 C5.16918034,39.9998939 5.16918034,40.6990909 5.56562971,41.1304022 L7.41345942,43.1399863 C7.60391755,43.347029 7.86209188,43.4634146 8.13133228,43.4634146 C8.40057267,43.4634146 8.658747,43.347029 8.84920513,43.1399863 L12.8733947,38.7630484 C13.2698441,38.3318474 13.2698441,37.6326504 12.8733947,37.2014495 Z" fill-rule="nonzero"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </symbol>
+  </defs>
+</svg>
+
+
+
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" style="position:absolute;width:0;height:0">
+    <defs>
+      <symbol id="toggle-locale-icon" viewBox="0 0 20.23 20.23">
+        <path d="M10.11,0a10.11,10.11,0,0,0,0,20.23h0A10.11,10.11,0,0,0,10.11,0Zm-9,10.67H4.79a17.93,17.93,0,0,0,.47,3.66H2.19A8.89,8.89,0,0,1,1.15,10.67Zm9.52-5.9V1.21c1.13.34,2.13,1.68,2.81,3.56ZM13.82,5.9a16.2,16.2,0,0,1,.49,3.66H10.67V5.9ZM9.56,1.21V4.77H6.75C7.41,2.87,8.43,1.55,9.56,1.21Zm0,4.68V9.56H5.92A17.7,17.7,0,0,1,6.41,5.9ZM4.79,9.56H1.15a9.21,9.21,0,0,1,1-3.66H5.24A17.77,17.77,0,0,0,4.79,9.56Zm1.13,1.11H9.56v3.66H6.41A16.2,16.2,0,0,1,5.92,10.67Zm3.64,4.79V19c-1.13-.34-2.13-1.68-2.81-3.56ZM10.67,19V15.46h2.81C12.82,17.35,11.8,18.67,10.67,19Zm0-4.68V10.67h3.64a17.7,17.7,0,0,1-.49,3.66Zm4.77-3.66h3.64a9.21,9.21,0,0,1-1,3.66H15A17.77,17.77,0,0,0,15.44,10.67Zm0-1.11A17.93,17.93,0,0,0,15,5.9H18a8.56,8.56,0,0,1,1,3.66Zm1.89-4.79H14.67a9.52,9.52,0,0,0-1.62-3.15A8.94,8.94,0,0,1,17.33,4.77ZM7.17,1.62A9.74,9.74,0,0,0,5.56,4.77H2.9A8.94,8.94,0,0,1,7.17,1.62ZM2.9,15.46H5.56a9.52,9.52,0,0,0,1.62,3.15A8.94,8.94,0,0,1,2.9,15.46Zm10.16,3.15a9.74,9.74,0,0,0,1.62-3.15h2.66A8.94,8.94,0,0,1,13.05,18.61Z"
+        />
+      </symbol>
+      <symbol viewBox="0 0 10 10" id="icon-close-thin">
+        <path d="M9.66063736,1.96954253 L6.63108839,4.99941183 L9.66063736,8.0291344 C9.95289367,8.32036141 10.0673758,8.7454946 9.96088117,9.14409989 C9.85438655,9.54270519 9.5431293,9.85409386 9.1445697,9.96075602 C8.7460101,10.0674182 8.32082993,9.95311424 8.02948097,9.66097948 L4.99927658,6.63091453 L1.96929719,9.66095014 C1.5186767,10.1114069 0.788210118,10.1112733 0.337754413,9.66065176 C-0.112701292,9.21003019 -0.112567715,8.47956185 0.338052766,8.02910505 L3.36751369,4.99938248 L0.337886464,1.96954253 C-0.110881296,1.51877943 -0.110122429,0.789827607 0.33958288,0.339999855 C0.789288189,-0.109827896 1.51823802,-0.110783456 1.96912111,0.337863741 L4.99924724,3.36773304 L8.02913859,0.337863741 C8.47972396,-0.112663274 9.21021901,-0.112615088 9.66074495,0.337971365 C10.1112709,0.788557819 10.1112227,1.51905462 9.66063736,1.96958166 L9.66063736,1.96954253 Z"
+        />
+      </symbol>
+      <symbol viewBox="0 0 15 11" id="icon-language-check">
+        <path d="M5.3,10.6c-0.3,0-0.5-0.1-0.7-0.3L0.8,6.5c-0.4-0.4-0.4-1,0-1.4c0.4-0.4,1-0.4,1.4,0l3.1,3.1l7.4-7.4 c0.4-0.4,1-0.4,1.4,0c0.4,0.4,0.4,1,0,1.4L6,10.3C5.8,10.5,5.6,10.6,5.3,10.6"
+        />
+      </symbol>
+      <symbol viewBox="0 0 38.4 54.4" id="icon-qr-phone">
+        <polygon points="19,20.7 17,20.7 17,15.6 12.8,15.6 12.8,13.6 19,13.6 	"></polygon>
+        <polygon points="19.1,28.6 14.5,28.6 14.5,26.6 17.1,26.6 17.1,22.8 19.1,22.8 	"></polygon>
+        <polygon points="6.7,28.3 4.7,28.3 4.7,22.8 12.9,22.8 12.9,17.2 14.9,17.2 14.9,24.8 6.7,24.8 	"></polygon>
+        <polygon points="27.8,18.4 25.8,18.4 25.8,15.6 19.8,15.6 19.8,13.6 27.8,13.6 	"></polygon>
+        <path d="M12.1,21H4.7v-7.5h7.5V21z M6.7,19h3.5v-3.5H6.7V19z"></path>
+        <path d="M12.1,36.7H4.7v-7.5h7.5V36.7z M6.7,34.7h3.5v-3.5H6.7V34.7z"></path>
+        <rect x="8.4" y="26.5" width="3.4" height="2"></rect>
+        <path d="M35.5,27.9L35.5,27.9c-0.5,0-1.1,0.2-1.5,0.4c-0.4-0.7-1-1.2-1.8-1.4V5.4c0-3-2.4-5.4-5.3-5.4c0,0,0,0,0,0H5.3
+          C2.4,0,0,2.4,0,5.4V49c0,3,2.4,5.4,5.3,5.4h21.4c3,0,5.3-2.4,5.3-5.4v-1.2c3.6-0.2,6.3-3.2,6.2-6.8c0-1.6,0-2.8,0-3.7
+          c0-2.6,0-3.5,0-6.4C38.4,29.3,37.1,27.9,35.5,27.9z M23.3,17.7c-1.6,0-2.9,1.4-2.9,3V32l-0.1-0.1c-0.7-0.8-1.7-1.3-2.7-1.4
+          c-1-0.1-2.1,0.3-2.8,1L14.2,32c-0.3,0.3-0.4,0.7-0.2,1.1l4.7,9H1.8V10.6h28.5V27c-0.2,0.1-0.5,0.2-0.7,0.4
+          c-0.5-0.8-1.4-1.3-2.3-1.3l0,0c-0.4,0-0.7,0.1-1.1,0.2v-5.6C26.3,19.1,25,17.8,23.3,17.7C23.3,17.7,23.3,17.7,23.3,17.7z M5.3,1.8
+          h21.4c2,0,3.6,1.6,3.5,3.6v3.4H1.8V5.4C1.8,3.4,3.4,1.8,5.3,1.8z M26.8,52.6H5.3c-2,0-3.6-1.6-3.6-3.6v-5.2h17.8l0.2,0.5
+          c1.1,2.1,3.2,3.5,5.6,3.5h5V49C30.3,51,28.8,52.6,26.8,52.6z M36.6,37.3V41c0.1,2.7-2,4.9-4.6,5h-6.6c-1.7-0.1-3.2-1-4-2.6
+          l-5.5-10.5h0.1l0,0c0.4-0.4,1-0.6,1.5-0.5c0.6,0,1.1,0.3,1.5,0.8l1.6,2c0.3,0.4,0.9,0.4,1.3,0.1c0.2-0.2,0.3-0.4,0.3-0.7V20.8
+          c-0.1-0.6,0.4-1.2,1-1.3c0.6-0.1,1.2,0.4,1.3,1c0,0.1,0,0.2,0,0.3v11.9c0,0.5,0.4,0.9,0.9,0.9c0.5,0,0.9-0.4,0.9-0.9v-3.6
+          c0-0.6,0.4-1.2,1.1-1.2c0,0,0,0,0,0l0,0c0.7,0,1.1,0.6,1.1,1.3c0,0,0,0,0,0v3.2c0,0.5,0.4,0.9,0.9,0.9c0.5,0,0.9-0.4,0.9-0.9v-2.5
+          c-0.1-0.6,0.4-1.2,1-1.2s1.2,0.4,1.2,1c0,0.1,0,0.1,0,0.2v2.4c-0.1,0.5,0.3,0.9,0.8,1c0.5,0.1,0.9-0.3,1-0.8c0-0.1,0-0.1,0-0.2
+          v-1.3c0-0.7,0.5-1.2,1.2-1.3l0,0c0.7,0,1.2,0.6,1.1,1.3L36.6,37.3z"></path>
+        <path d="M15.5,45.7c-1.2,0-2.2,1-2.2,2.2s1,2.2,2.2,2.2s2.2-1,2.2-2.2S16.8,45.7,15.5,45.7L15.5,45.7z M15.5,48.9
+          c-0.6,0-1-0.4-1-1s0.4-1,1-1c0.6,0,1,0.4,1,1C16.5,48.4,16.1,48.9,15.5,48.9z"></path>
+      </symbol>
+      <symbol viewBox="0 0 81.8 58" id="icon-qr-complete">
+        <style type="text/css">
+          .st1{fill:#FFFFFF;}
+        </style>
+        <circle cx="41.3" cy="43.5" r="6.5"></circle>
+        <path class="st1" d="M39.5,47.1L37,44.7c-0.4-0.4-0.4-1,0-1.4s1-0.4,1.4,0l1.1,1.1l4.7-3.9c0.4-0.4,1.1-0.3,1.4,0.1
+          s0.3,1.1-0.1,1.4L39.5,47.1z"></path>
+        <path d="M76.8,58H5c-2.8,0-5-2.2-5-5V5c0-2.8,2.2-5,5-5h71.8c2.8,0,5,2.2,5,5v48C81.8,55.8,79.6,58,76.8,58z M5,2
+          C3.3,2,2,3.3,2,5v48c0,1.7,1.3,3,3,3h71.8c1.7,0,3-1.3,3-3V5c0-1.7-1.3-3-3-3H5z"></path>
+        <path d="M65.9,11h-38c-0.6,0-1-0.4-1-1s0.4-1,1-1h38c0.6,0,1,0.4,1,1S66.5,11,65.9,11z"></path>
+        <path d="M65.9,17h-38c-0.6,0-1-0.4-1-1s0.4-1,1-1h38c0.6,0,1,0.4,1,1S66.5,17,65.9,17z"></path>
+        <path d="M65.9,23h-38c-0.6,0-1-0.4-1-1s0.4-1,1-1h38c0.6,0,1,0.4,1,1S66.5,23,65.9,23z"></path>
+        <path d="M65.9,29h-38c-0.6,0-1-0.4-1-1s0.4-1,1-1h38c0.6,0,1,0.4,1,1S66.5,29,65.9,29z"></path>
+        <path d="M21.9,11h-6c-0.6,0-1-0.4-1-1s0.4-1,1-1h6c0.6,0,1,0.4,1,1S22.5,11,21.9,11z"></path>
+        <path d="M21.9,17h-6c-0.6,0-1-0.4-1-1s0.4-1,1-1h6c0.6,0,1,0.4,1,1S22.5,17,21.9,17z"></path>
+        <path d="M21.9,23h-6c-0.6,0-1-0.4-1-1s0.4-1,1-1h6c0.6,0,1,0.4,1,1S22.5,23,21.9,23z"></path>
+        <path d="M21.9,29h-6c-0.6,0-1-0.4-1-1s0.4-1,1-1h6c0.6,0,1,0.4,1,1S22.5,29,21.9,29z"></path>
+      </symbol>
+      <symbol viewBox="0 0 56.82 70" id="icon-qr-kiosk">
+        <path d="M42.73,7.69H14a2,2,0,0,0-2,2V25.07a2,2,0,0,0,2,2H42.73a2,2,0,0,0,2-2V9.69A2,2,0,0,0,42.73,7.69Zm0,17.38H14V9.69H42.73Z"></path>
+        <path d="M28.36,6.3A1.34,1.34,0,1,0,27,5,1.33,1.33,0,0,0,28.36,6.3Z"></path>
+        <rect x="12.99" y="32.08" width="5.35" height="5.35" rx="0.3"></rect>
+        <path d="M55.82,42.14H50.19V5a5,5,0,0,0-5-5H11.53a5,5,0,0,0-5,5V42.14H1a1,1,0,0,0,0,2H6.53V68.5A1.5,1.5,0,0,0,8,70H48.69a1.5,1.5,0,0,0,1.5-1.5V44.14h5.63a1,1,0,1,0,0-2ZM48.19,68H8.53V44.14H48.19Zm0-25.86H8.53V5a3,3,0,0,1,3-3H45.19a3,3,0,0,1,3,3Z"></path>
+      </symbol>
+    </defs>
+  </svg>
+  <script src="js/jquery-2.1.1.js"></script>
+  <script src="js/inputmask.js"></script>
+  <script src="js/inputmask.date.extensions.js"></script>
+  <script src="js/app.js"></script>
+  </body>
+</html>
+
+<script type="text/javascript">
+  $(function () {
+      $('.kiosk-lock-button-cancel').on('click', function() {
+          $('.fixed-overlay').hide();
+      })
+  });
+</script>
