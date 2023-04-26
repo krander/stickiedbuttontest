@@ -1,0 +1,9 @@
+@import "rounded-corners";
+
+.circle-aligned(@radius) {
+    width: @radius;
+    height: @radius;
+    margin-left: -@radius / 2;
+
+    .rounded-corners(@radius);
+}
