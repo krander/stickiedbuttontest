@@ -1,0 +1,77 @@
+// Styles for authentication page
+.progress-bar {
+  display: flex;
+  height: 4px;
+  margin-bottom: 20px;
+  .item {
+    opacity: 0.3;
+    position: relative;
+    &.custom-highlight-color.now {
+      opacity: 1;
+      &:before,
+      &:after {
+        content: '';
+        display: block;
+        width: 50%;
+        position: absolute;
+        height: 100%;
+      }
+      &:after {
+        right: 0;
+        opacity: 0.3;
+      }
+    }
+  }
+}
+
+.address-list {
+  margin: 0;
+  padding: 10px 20px 0px 20px;
+  font-weight: bold;
+  font-size: @font_large_size;
+  list-style: none;
+  text-align: left;
+  &-item {
+    padding: 0.2em 0;
+    input {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 0 13px;
+      flex: 0 0 13px;
+      margin-right: 5px;
+    }
+  }
+  &-item-inner {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+  }
+}
+
+.dob-verifiation-month {
+  width: 120px;
+}
+
+.icon-user {
+  position: absolute;
+  top: 70%;
+  right: 30px;
+  width: 50%;
+  max-width: 400px;
+  opacity: 0.05;
+  padding-bottom: 1%;
+  overflow: visible !important;
+  @media @mobile {
+    display: none;
+  }
+}
+.resend-status {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  &.validation-summary-errors {
+    color: @red !important;
+  }
+}
