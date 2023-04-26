@@ -1,0 +1,250 @@
+/*! Tablet styles. */
+.hide-mobile {
+  display: none
+}
+
+.complete-screen {
+  padding-bottom: 0
+}
+
+.complete-screen-footer {
+  display: none
+}
+
+form.non-payment-reason-form {
+  padding: 10px
+}
+
+::-webkit-input-placeholder {
+  color: #294753 !important
+}
+
+::-moz-placeholder {
+  color: #294753 !important
+}
+
+:-ms-input-placeholder {
+  color: #294753 !important
+}
+
+:-moz-placeholder {
+  color: #294753 !important
+}
+
+select:invalid {
+  color: #294753 !important
+}
+
+.custom-header-bg-color,
+.custom-footer-bg-color,
+.custom-header-bg-color h2.step-title:after,
+.progress-bar .item,
+.progress-bar .item.custom-highlight-color.current,
+.progress-bar .item.custom-highlight-color.current.active:after,
+.progress-bar .item.custom-highlight-color.now:after,
+.modal-plane-background,
+.ng-modal-overlay,
+.language-selection.visible:after,
+.is-language-selection .toggle-locale-wrapper:before {
+  background: #294753 !important
+}
+
+.custom-header-font-color,
+.toggle-locale,
+.toggle-locale-button,
+.toggle-locale.single,
+.toggle-locale-button.single {
+  border-color: #fff !important
+}
+
+.custom-header-font-color svg,
+.custom-header-bg-color svg {
+  fill: #fff !important
+}
+
+body,
+.custom-body-bg-color,
+.progress-bar .item.custom-highlight-color.now,
+.progress-bar .item.custom-highlight-color.current.active {
+  background: #fff !important
+}
+
+.custom-body-font-color,
+tooltip tip,
+.custom-body-font-color .question-name,
+.custom-body-font-color .sub-question-name,
+svg.custom-body-font-color use,
+.custom-body-bg-color,
+[class^="icon-"] {
+  color: #294753 !important;
+  fill: #294753 !important
+}
+
+.custom-body-font-color input[type="checkbox"]+label .checkbox-img,
+.custom-body-font-color input[type="radio"]+label .radio-img,
+.custom-body-font-color .radio-checked,
+.custom-body-font-color .radio-notchecked,
+.custom-body-bg-color .styled-checkbox+label .checkbox-img,
+.custom-body-bg-color .agreement-text,
+.agreement-text.input-wrapper:before,
+.custom-body-bg-color .consent-content,
+.custom-body-font-color .insurance-card-modal__control,
+.custom-body-font-color.insurance-card-modal__control:active,
+.custom-body-bg-color .styled-checkbox:checked+label .checkbox-img,
+.insurance-card-modal__control,
+.question-form .select-wrapper:after,
+.select-wrapper:after {
+  border-color: #294753 !important
+}
+
+.two-factor .form-group input[type='tel']:focus {
+  border-color: #f26b2e !important
+}
+
+.custom-body-font-color input[type="checkbox"]:checked+label .checkbox-img,
+.custom-body-font-color input[type="radio"]:checked+label .radio-img:after,
+.custom-body-font-color .radio-checked:after,
+.custom-body-bg-color .radio-button-custom:checked+.select-icon:before,
+.custom-body-font-color .turn-wrapper,
+.custom-body-font-color.insurance-card-modal__control:active,
+.custom-body-bg-color .styled-checkbox:checked+label .checkbox-img,
+.input-wrapper:before,
+.radio-button-custom+.select-icon:after,
+.styled-checkbox+label span.checkbox-img:before,
+.visible .language-selection-background:before,
+ul.options-list li:before,
+.complete-info:before,
+.insurance-card-modal:before {
+  background: #294753 !important
+}
+
+.custom-primary-action-button {
+  background: #f26b2e !important;
+  color: #fff !important;
+  border-color: #f26b2e !important
+}
+
+.custom-secondary-action-button {
+  background: #294753 !important;
+  color: #fff !important;
+  border-color: #294753 !important
+}
+
+.selected-answers-list__item:before {
+  background: #f26b2e !important
+}
+
+.custom-secondary-action-button svg,
+.custom-secondary-action-button use {
+  fill: #fff !important
+}
+
+.custom-primary-action-button svg,
+.custom-primary-action-button use {
+  fill: #fff !important
+}
+
+.selected-answers-list .icon-close,
+.selected-answers-list .icon-close use,
+.consent-review-item-wrapper .icon-edit-wrapper {
+  border-color: #f26b2e !important;
+  color: #f26b2e !important;
+  fill: #f26b2e !important
+}
+
+.custom-highlight-color,
+.sk-circle:before {
+  background: #f26b2e !important;
+  border-color: #f26b2e !important
+}
+
+.progress .circle-smallest.custom-highlight-color {
+  border-color: #294753 !important;
+  background-color: #294753 !important;
+  opacity: .3
+}
+
+.current .circle-smallest.custom-highlight-color {
+  background-color: #f26b2e !important;
+  border-color: #f26b2e !important;
+  opacity: 1
+}
+
+.progress-bar .item.custom-highlight-color,
+.progress-bar .item.custom-highlight-color.now:before,
+.progress-bar .item.custom-highlight-color.current.active:before {
+  background-color: #f26b2e !important
+}
+
+.custom-highlight-color[class^="icon-"],
+a.custom-highlight-color {
+  background: none !important;
+  border: none !important
+}
+
+.custom-highlight-font-color,
+.color-orange,
+.custom-highlight-color,
+a.custom-highlight-color,
+.custom-highlight-color use,
+.custom-body-bg-color a,
+.button-none-bg {
+  color: #f26b2e !important;
+  fill: #f26b2e !important
+}
+
+.modal-control-element.color-grey {
+  color: #294753 !important
+}
+
+.modal-control-element.color-orange,
+.link-button.link-button-orange,
+.link-button.link-button-orange svg,
+.link-button.link-button-orange svg use,
+.resend-status,
+.consent-review-item-wrapper .icon-edit,
+.consent-review-item-wrapper .icon-edit use {
+  color: #f26b2e !important;
+  fill: #f26b2e !important
+}
+
+.question-form input:focus,
+.question-form select:focus,
+.question-form textarea:focus,
+.button-none-bg {
+  border-color: #f26b2e !important
+}
+
+.custom-footer-bg-color,
+.custom-header-font-color,
+.custom-footer-font-color,
+.custom-header-font-color [class^="icon-"],
+.toggle-locale__label-button,
+.toggle-locale-button__label,
+.toggle-locale-button,
+.toggle-locale-button.single .toggle-locale__label-button,
+.toggle-locale__label,
+.custom-footer-bg-color a {
+  color: #fff !important
+}
+
+.welcome-page__header--border,
+.is-language-selection .toggle-locale:before,
+.is-language-selection .toggle-locale-button:before,
+.toggle-locale-button.selected:before,
+.language-selection-welcome:before {
+  background: #fff !important
+}
+.answer-list-item.edited .answer-list-item__name:before,
+.answer-list-item.edited .answer-list-item__name-bg:before {
+  background: #294753
+}
+.answer-list-item.opened .answer-list-item__name,
+.answer-list-item.opened .answer-list-item__name-bg.mobile {
+  border-color: #f26b2e;
+}
+
+.icon-no-fill {
+  fill: none !important;
+}
+/*! Generation Time: 10/15/2018 1:23:14 PM */
